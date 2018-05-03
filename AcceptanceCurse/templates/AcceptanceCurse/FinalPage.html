@@ -34,7 +34,7 @@
                 <td>{{ p.subsession.round_number }}</td>
                 <td>{{ p.subsession.game }} </td>
                 <td>{% if p.type == 1 %} H {% elif p.type == 2 %} M {% elif p.type == 3 %} L {% endif %}</td>
-                <td>{% if p.type == 1 %} {% if subsession.game == "A" %} 100 {% elif subsession.game == "B" %} 80 {% endif %} {% elif p.type == 2 %} 75 {% elif p.type == 3 %} 25 {% endif %}</td>
+                <td>{% if p.type == 1 %} {% if p.subsession.game == "A" %} 100 {% elif p.subsession.game == "B" %} 80 {% endif %} {% elif p.type == 2 %} 75 {% elif p.type == 3 %} 25 {% endif %}</td>
                 <td>{% if p.signal == 1 %} Red {% elif p.signal == 2 %} Yellow {% elif p.signal == 3 %} Blue {% endif %}</td>
                 <td>{% if p.choice %} Propose {% else %} Don't Propose {% endif %}</td>
                 <td>{% if p.partner_choice %} Propose {% else %} Don't Propose {% endif %}</td>

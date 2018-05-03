@@ -1,0 +1,50 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree %}
+
+{% block title %}
+    The Experiment Is Over
+{% endblock %}
+
+{% block content %}
+
+    <p>
+        This was the last round in the experiment. Your total payoff is: {{player.participant.payoff}}.
+    </p>
+    <p>
+        Your payment is: {{player.participant.payoff_plus_participation_fee}}.
+    </p>
+    <br />
+    <br />
+    <br />
+    <h4>History Table</h4>
+    <table class="table">
+        <tr>
+            <th>Round</th>
+            <th>Game</th>
+            <th>Your Type</th>
+            <th>Your Reservation Value</th>
+            <th>Your Clue</th>
+            <th>Your Choice</th>
+            <th>Partner's Choice</th>
+            <th>Partner's Type</th>
+            <th>Your points</th>
+        </tr>
+        {% for p in player.in_all_rounds %}
+            <tr>
+                <td>{{ p.subsession.round_number }}</td>
+                <td>{{ p.subsession.game }} </td>
+                <td>{% if p.type == 1 %} H {% elif p.type == 2 %} M {% elif p.type == 3 %} L {% endif %}</td>
+                <td>{% if p.type == 1 %} {% if subsession.game == "A" %} 100 {% elif subsession.game == "B" %} 80 {% endif %} {% elif p.type == 2 %} 75 {% elif p.type == 3 %} 25 {% endif %}</td>
+                <td>{% if p.signal == 1 %} Red {% elif p.signal == 2 %} Yellow {% elif p.signal == 3 %} Blue {% endif %}</td>
+                <td>{% if p.choice %} Propose {% else %} Don't Propose {% endif %}</td>
+                <td>{% if p.partner_choice %} Propose {% else %} Don't Propose {% endif %}</td>
+                <td>{% if p.partner_type == 1 %} H {% elif p.partner_type == 2 %} M {% elif p.partner_type == 3 %} L {% endif %}</td>
+                <td>{{p.payoff}}</td>
+            </tr>
+        {% endfor %}
+    </table>
+
+
+{% endblock %}
+
+

@@ -1,0 +1,46 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree %}
+
+{% block title %}
+    Round {{subsession.round_number}}
+{% endblock %}
+
+{% block content %}
+
+    {% if player.match == 1 %}
+    <p>
+        Your formed a partnership.
+        Your points are: {{player.payoff}}.
+    </p>
+    {% elif player.match == 0 %}
+    <p>
+        You did not form a partnership.
+        Your points are: {{player.payoff}}.
+    </p>
+    {% endif %}
+
+    {% next_button %}
+
+{% endblock %}
+
+{% block styles %}
+    <style>
+        .otree-timer {
+            display: none;
+        }
+    </style>
+{% endblock %}
+
+{% block scripts %}
+    <script>
+        $(function () {
+            $('.otree-timer__time-left').on('update.countdown', function (event) {
+                if (event.offset.totalSeconds === 5) {
+                    $('.otree-timer').show();
+                }
+            });
+        });
+    </script>
+{% endblock %}
+
+

@@ -18,9 +18,9 @@ Matching Game with noisy signals
 class Constants(BaseConstants):
     name_in_url = 'partnership game'
     players_per_group = None
-    num_rounds = 40
-    A_rounds = range(1, 21)
-    B_rounds = range(21, 41)
+    num_rounds = 4
+    A_rounds = range(1, 3)
+    B_rounds = range(3, 5)
     type_space = [1, 2, 3]
     type_labels = ["H", "M", "L"]
     A_match_value = [160, 80, 40]
@@ -39,6 +39,10 @@ class Subsession(BaseSubsession):
     game = models.StringField()
 
     def initialize_round(self):
+        # set paying round
+        if self.round_number == 1:
+            paying_round = random.randint(1, Constants.num_rounds)
+            self.session.vars['paying_round'] = paying_round
         # set game A or B
         if self.round_number in Constants.A_rounds:
             self.game = "A"
@@ -83,8 +87,12 @@ class Subsession(BaseSubsession):
             for q in self.get_players():
                 if p.partner_id == q.id_in_group:
                     p.partner_choice = q.choice
-                    p.match = p.choice * q.choice
-                    p.payoff = p.match * match_value[q.type-1] + (1 - p.match) * reservation_value[p.type-1]
+            p.match = p.choice * p.partner_choice
+            p.points = p.match * match_value[p.partner_type-1] + (1 - p.match) * reservation_value[p.type-1]
+            if self.round_number == self.session.vars['paying_round']:
+                p.payoff = p.points
+            else:
+                p.payoff = c(0)
 
 
 class Group(BaseGroup):
@@ -106,3 +114,4 @@ class Player(BasePlayer):
     partner_choice = models.BooleanField()
     match = models.IntegerField()
     late = models.IntegerField()
+    points = models.IntegerField()

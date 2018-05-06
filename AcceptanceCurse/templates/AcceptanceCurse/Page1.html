@@ -118,7 +118,7 @@
                 <td>{% if p.round_number == player.round_number %} - {% elif p.choice %} Propose {% else %} Don't Propose {% endif %}</td>
                 <td>{% if p.round_number == player.round_number %} - {% elif p.partner_choice %} Propose {% else %} Don't Propose {% endif %}</td>
                 <td>{% if p.round_number == player.round_number %} - {% elif p.partner_type == 1 %} H {% elif p.partner_type == 2 %} M {% elif p.partner_type == 3 %} L {% endif %}</td>
-                <td>{% if p.round_number == player.round_number %} - {% else %} {{p.payoff}} {% endif %}</td>
+                <td>{% if p.round_number == player.round_number %} - {% else %} {{p.points}} {% endif %}</td>
             </tr>
         {% endfor %}
     </table>

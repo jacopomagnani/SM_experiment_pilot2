@@ -8,7 +8,7 @@
 {% block content %}
 
     <p>
-        This was the last round in the experiment. Your total payoff is: {{player.participant.payoff}}.
+        The experiment is over. The paying round was:  {{ paying_round }}. Your payoff in that round is: {{player.participant.payoff}}.
     </p>
     <p>
         Your payment is: {{player.participant.payoff_plus_participation_fee}}.
@@ -39,7 +39,7 @@
                 <td>{% if p.choice %} Propose {% else %} Don't Propose {% endif %}</td>
                 <td>{% if p.partner_choice %} Propose {% else %} Don't Propose {% endif %}</td>
                 <td>{% if p.partner_type == 1 %} H {% elif p.partner_type == 2 %} M {% elif p.partner_type == 3 %} L {% endif %}</td>
-                <td>{{p.payoff}}</td>
+                <td>{{p.points}}</td>
             </tr>
         {% endfor %}
     </table>

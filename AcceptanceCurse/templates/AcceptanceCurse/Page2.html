@@ -11,11 +11,13 @@
     <p>
         Your formed a partnership.
         Your points are: {{player.payoff}}.
+        Your partner's type is: {% if player.partner_type == 1 %} H {% elif player.partner_type == 2 %} M {% elif player.partner_type == 3 %} L {% endif %}
     </p>
     {% elif player.match == 0 %}
     <p>
         You did not form a partnership.
         Your points are: {{player.payoff}}.
+        Your partner's type was: {% if player.partner_type == 1 %} H {% elif player.partner_type == 2 %} M {% elif player.partner_type == 3 %} L {% endif %}
     </p>
     {% endif %}
 

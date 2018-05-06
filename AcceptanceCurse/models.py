@@ -18,9 +18,9 @@ Matching Game with noisy signals
 class Constants(BaseConstants):
     name_in_url = 'partnership game'
     players_per_group = None
-    num_rounds = 4
-    A_rounds = range(1, 3)
-    B_rounds = range(3, 5)
+    num_rounds = 40
+    A_rounds = [3, 4, 5, 6, 8, 11, 12, 15, 17, 18, 19, 20, 22, 23, 24, 28, 29, 30, 33, 36]
+    B_rounds = [1, 2, 7, 9, 10, 13, 14, 16, 21, 25, 26, 27, 31, 32, 34, 35, 37, 38, 39, 40]
     type_space = [1, 2, 3]
     type_labels = ["H", "M", "L"]
     A_match_value = [160, 80, 40]

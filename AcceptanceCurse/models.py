@@ -16,7 +16,7 @@ Matching Game with noisy signals
 
 
 class Constants(BaseConstants):
-    name_in_url = 'partnership game'
+    name_in_url = 'game'
     players_per_group = None
     num_rounds = 2
     A_rounds = [1]

@@ -1,0 +1,20 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree %}
+
+{% block title %}
+    Part 4
+{% endblock %}
+
+{% block content %}
+
+Please provide the following information.
+
+{% formfield player.sex label="Your sex" %}
+
+{% formfield player.major label="Your major" %}
+
+
+    {% next_button %}
+{% endblock %}
+
+

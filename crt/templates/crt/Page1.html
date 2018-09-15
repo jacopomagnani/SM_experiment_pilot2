@@ -1,0 +1,34 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree %}
+
+{% block title %}
+    Part 3
+{% endblock %}
+
+{% block content %}
+<p>
+    Please answer the following questions.
+</p>
+<br />
+<p>
+    1. A bat and a ball cost $1.10 in total. The bat costs $1.00 more than the ball. How much
+    does the ball cost?  {% formfield player.answer1 label="Answer (in cents)"%}
+</p>
+<br />
+<p>
+    2. If it takes 5 machines 5 minutes to make 5 widgets, how long would it take 100 machines
+    to make 100 widgets?
+    {% formfield player.answer2 label="Answer (in minutes)"%}
+</p>
+<br />
+<p>
+    3. In a lake, there is a patch of lily pads. Every day, the patch doubles in size. If it takes 48
+    days for the patch to cover the entire lake, how long would it take for the patch to cover
+    half of the lake?
+   {% formfield player.answer3 label="Answer (in days)"%}
+</p>
+<br />
+
+{% next_button %}
+
+{% endblock %}

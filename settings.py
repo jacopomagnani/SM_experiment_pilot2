@@ -20,7 +20,7 @@ SESSION_CONFIGS = [
         'name': 'AcceptanceCurse',
         'display_name': "Matching with Noise",
         'num_demo_participants': 2,
-        'app_sequence': ['AcceptanceCurse'],
+        'app_sequence': ['AcceptanceCurse', 'mpl', 'crt','survey', 'finalpage'],
     }
     ]
 # see the end of this file for the inactive session configs
@@ -33,6 +33,7 @@ LANGUAGE_CODE = 'en'
 # e.g. EUR, GBP, CNY, JPY
 REAL_WORLD_CURRENCY_CODE = 'AED'
 USE_POINTS = True
+
 
 ROOMS = [
     {

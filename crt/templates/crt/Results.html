@@ -1,0 +1,23 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree %}
+
+{% block title %}
+    Part 3 Is Over
+{% endblock %}
+
+{% block content %}
+<p>
+    The right answers are:
+    <ol>
+        <li>5 cents</li>
+        <li>5 minutes</li>
+        <li>47 days</li>
+    </ol>
+</p>
+<p>
+    You answered {{player.num_correct}} questions correctly. In this part you have earned: <b>{{player.payoff }}</b>.
+</p>
+    {% next_button %}
+{% endblock %}
+
+

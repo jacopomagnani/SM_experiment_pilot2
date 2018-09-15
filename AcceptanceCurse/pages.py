@@ -4,6 +4,10 @@ from .models import Constants
 import random
 
 
+class Intro(Page):
+    def is_displayed(self):
+        return self.round_number == 1
+
 class MyWaitPage1(WaitPage):
 
     def after_all_players_arrive(self):
@@ -51,6 +55,7 @@ class FinalPage(Page):
 
 
 page_sequence = [
+    Intro,
     MyWaitPage1,
     Page1,
     MyWaitPage2,

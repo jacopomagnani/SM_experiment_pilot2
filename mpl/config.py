@@ -56,7 +56,7 @@ class Constants(BaseConstants):
     # depict probabilities as percentage numbers
     # if <percentage = True>, the probability of outcome "high" will be displayed as percentage number
     # if <percentage = False>, the probabilities will be displayed as fractions, i.e. "1/X", "2/X", etc.
-    percentage = False
+    percentage = True
 
     # show small pie charts for each lottery
     # if <small_pies = True>, a pie chart depicting the probabilities of outcomes is rendered next to each lottery

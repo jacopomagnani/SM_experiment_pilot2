@@ -26,9 +26,9 @@ class Page1(Page):
             self.player.late = 1
             flip = random.randint(0,1)
             if flip ==0:
-                self.player.choice = False
+                self.player.choice = 0
             else:
-                self.player.choice = True
+                self.player.choice = 1
 
 
 class MyWaitPage2(WaitPage):

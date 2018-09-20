@@ -7,7 +7,7 @@
 
 {% block content %}
     <hr>
-    <h4 align="center"> In this round you will play Game {{ subsession.game }} </h4>
+    <h4 align="center"> In this round you will play Game {{ subsession.game_name }} </h4>
     <div class = "row">
         <div class="column">
             <p align="center">
@@ -40,7 +40,7 @@
                 </tr>
                 <tr>
                     <td>Your Points</td>
-                    <td>{% if subsession.game == "A" %} 100 {% elif subsession.game == "B" %} 80 {% endif %}</td>
+                    <td>{% if subsession.game == 0 %} 100 {% elif subsession.game == 1 %} 80 {% endif %}</td>
                     <td>75</td>
                     <td>25</td>
                 </tr>
@@ -60,7 +60,7 @@
 
     {% if player.type == 1 %}
     <p>
-        You are an H type (your reservation value is: {% if subsession.game == "A" %} 100 {% elif subsession.game == "B" %} 80 {% endif %}).
+        You are an H type (your reservation value is: {% if subsession.game == 0 %} 100 {% elif subsession.game == 1 %} 80 {% endif %}).
     </p>
     {% elif player.type == 2 %}
     <p>
@@ -98,7 +98,6 @@
             <th>Round</th>
             <th>Game</th>
             <th>Your Type</th>
-            <th>Your Reservation Value</th>
             <th>Your Clue</th>
             <th>Your Choice</th>
             <th>Partner's Choice</th>
@@ -108,12 +107,11 @@
         {% for p in player.in_all_rounds %}
             <tr>
                 <td>{{ p.subsession.round_number }}</td>
-                <td>{{ p.subsession.game }} </td>
+                <td>{{ p.subsession.game_name }} </td>
                 <td>{% if p.type == 1 %} H {% elif p.type == 2 %} M {% elif p.type == 3 %} L {% endif %}</td>
-                <td>{% if p.type == 1 %} {% if subsession.game == "A" %} 100 {% elif subsession.game == "B" %} 80 {% endif %} {% elif p.type == 2 %} 75 {% elif p.type == 3 %} 25 {% endif %}</td>
                 <td>{% if p.signal == 1 %} Red {% elif p.signal == 2 %} Yellow {% elif p.signal == 3 %} Blue {% endif %}</td>
-                <td>{% if p.round_number == player.round_number %} - {% elif p.choice %} Propose {% else %} Don't Propose {% endif %}</td>
-                <td>{% if p.round_number == player.round_number %} - {% elif p.partner_choice %} Propose {% else %} Don't Propose {% endif %}</td>
+                <td>{% if p.round_number == player.round_number %} - {% elif p.choice %} Yes {% else %} No {% endif %}</td>
+                <td>{% if p.round_number == player.round_number %} - {% elif p.partner_choice %} Yes {% else %} No {% endif %}</td>
                 <td>{% if p.round_number == player.round_number %} - {% elif p.partner_type == 1 %} H {% elif p.partner_type == 2 %} M {% elif p.partner_type == 3 %} L {% endif %}</td>
                 <td>{% if p.round_number == player.round_number %} - {% else %} {{p.points}} {% endif %}</td>
             </tr>

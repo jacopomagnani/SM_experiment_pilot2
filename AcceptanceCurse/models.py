@@ -19,8 +19,9 @@ class Constants(BaseConstants):
     name_in_url = 'game'
     players_per_group = None
     num_rounds = 2
-    A_rounds = [1]
-    B_rounds = [2]
+    game_space = [0, 1]
+    game_labels = ["A", "B"]
+    game_sequence = [0, 1]
     type_space = [1, 2, 3]
     type_labels = ["H", "M", "L"]
     A_match_value = [160, 80, 40]
@@ -36,7 +37,8 @@ class Constants(BaseConstants):
 
 class Subsession(BaseSubsession):
 
-    game = models.StringField()
+    game = models.IntegerField()
+    game_name = models.StringField()
 
     def initialize_round(self):
         # set paying round
@@ -44,10 +46,8 @@ class Subsession(BaseSubsession):
             paying_round = random.randint(1, Constants.num_rounds)
             self.session.vars['paying_round'] = paying_round
         # set game A or B
-        if self.round_number in Constants.A_rounds:
-            self.game = "A"
-        elif self.round_number in Constants.B_rounds:
-            self.game = "B"
+        self.game = Constants.game_sequence[self.round_number - 1]
+        self.game_name = Constants.game_labels[self.game]
         # assign types
         for p in self.get_players():
             p.type = random.choice(Constants.type_space)
@@ -77,10 +77,10 @@ class Subsession(BaseSubsession):
 
 # matching
     def get_outcome(self):
-        if self.game == "A":
+        if self.game == 0:
             match_value = Constants.A_match_value
             reservation_value = Constants.A_reservation_value
-        elif self.game == "B":
+        elif self.game == 1:
             match_value = Constants.B_match_value
             reservation_value = Constants.B_reservation_value
         for p in self.get_players():

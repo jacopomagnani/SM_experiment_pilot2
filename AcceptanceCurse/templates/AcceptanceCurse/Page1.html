@@ -86,11 +86,8 @@
     </p>
     {% endif %}
 
-    <p>
-        Choose if you want to propose to form a partnership with the other player or not.
-    </p>
+    {% formfield player.choice label="Do you want to form a partnership?"%}
 
-    {% formfield player.choice label="I choose:" %}
     {% next_button %}
     <br />
     <br />

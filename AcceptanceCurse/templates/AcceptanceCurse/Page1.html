@@ -60,15 +60,15 @@
 
     {% if player.type == 1 %}
     <p>
-        You are an H type (your reservation value is: {% if subsession.game == 0 %} 100 {% elif subsession.game == 1 %} 80 {% endif %}).
+        You are an H type (if you do not form a partnership, you earn {% if subsession.game == 0 %} 100 {% elif subsession.game == 1 %} 80 {% endif %} points).
     </p>
     {% elif player.type == 2 %}
     <p>
-        You are an M type (your reservation value is: 75).
+        You are an M type (if you do not form a partnership, you earn 75 points).
     </p>
     {% elif player.type == 3 %}
     <p>
-        You are an L type (your reservation value is: 25).
+        You are an L type (if you do not form a partnership, you earn 25 points).
     </p>
     {% endif %}
 

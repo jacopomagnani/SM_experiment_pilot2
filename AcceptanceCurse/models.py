@@ -23,7 +23,7 @@ class Constants(BaseConstants):
     game_labels = ["A", "B"]
     game_sequence = [0, 1]
     type_space = [1, 2, 3]
-    type_labels = ["H", "M", "L"]
+    type_labels = ["X", "Y", "Z"]
     A_match_value = [160, 80, 40]
     A_reservation_value = [100, 75, 25]
     B_match_value = [160, 80, 40]

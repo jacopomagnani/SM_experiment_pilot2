@@ -106,8 +106,8 @@ class Player(BasePlayer):
     signal = models.IntegerField()
     choice = models.IntegerField(
         choices=[
-            [1, 'Propose'],
-            [0, 'Do not propose'],
+            [1, 'Yes'],
+            [0, 'No'],
         ],
         widget=widgets.RadioSelectHorizontal
     )

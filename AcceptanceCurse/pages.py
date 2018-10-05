@@ -8,10 +8,15 @@ class Intro(Page):
     def is_displayed(self):
         return self.round_number == 1
 
+
 class MyWaitPage1(WaitPage):
 
     def after_all_players_arrive(self):
+        if self.subsession.round_number == 1:
+            paying_round = random.randint(1, Constants.num_rounds)
+            self.session.vars['paying_round'] = paying_round
         self.subsession.initialize_round()
+        self.group.initialize_group()
 
 
 class Page1(Page):
@@ -34,7 +39,7 @@ class Page1(Page):
 class MyWaitPage2(WaitPage):
 
     def after_all_players_arrive(self):
-        self.subsession.get_outcome()
+        self.group.get_outcome()
 
 
 class Page2(Page):

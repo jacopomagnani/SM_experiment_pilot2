@@ -17,7 +17,7 @@ Matching Game with noisy signals
 
 class Constants(BaseConstants):
     name_in_url = 'game'
-    players_per_group = None
+    players_per_group = 2
     num_rounds = 2
     game_space = [0, 1]
     game_labels = ["A", "B"]
@@ -41,18 +41,20 @@ class Subsession(BaseSubsession):
     game_name = models.StringField()
 
     def initialize_round(self):
-        # set paying round
-        if self.round_number == 1:
-            paying_round = random.randint(1, Constants.num_rounds)
-            self.session.vars['paying_round'] = paying_round
         # set game A or B
         self.game = Constants.game_sequence[self.round_number - 1]
         self.game_name = Constants.game_labels[self.game]
+
+
+class Group(BaseGroup):
+
+    def initialize_group(self):
         # assign types
         for p in self.get_players():
             p.type = random.choice(Constants.type_space)
         # form random pairs
-        id_list = list(range(1,self.session.num_participants+1))
+        id_list = list(range(1,Constants.players_per_group+1))
+        #id_list = list(range(1,self.session.num_participants+1))
         while id_list:
             idx1 = random.randrange(0, len(id_list))
             p1 = id_list.pop(idx1)
@@ -75,12 +77,11 @@ class Subsession(BaseSubsession):
                     elif q.type == 3:
                         p.signal = numpy.random.choice(Constants.signal_space, p=Constants.pL)
 
-# matching
     def get_outcome(self):
-        if self.game == 0:
+        if self.subsession.game == 0:
             match_value = Constants.A_match_value
             reservation_value = Constants.A_reservation_value
-        elif self.game == 1:
+        elif self.subsession.game == 1:
             match_value = Constants.B_match_value
             reservation_value = Constants.B_reservation_value
         for p in self.get_players():
@@ -89,14 +90,10 @@ class Subsession(BaseSubsession):
                     p.partner_choice = q.choice
             p.match = p.choice * p.partner_choice
             p.points = p.match * match_value[p.partner_type-1] + (1 - p.match) * reservation_value[p.type-1]
-            if self.round_number == self.session.vars['paying_round']:
+            if self.subsession.round_number == self.session.vars['paying_round']:
                 p.payoff = p.points
             else:
                 p.payoff = c(0)
-
-
-class Group(BaseGroup):
-    pass
 
 
 class Player(BasePlayer):

@@ -140,7 +140,7 @@
                     </thead>
 
                     <tbody>
-                        {% for i,f,p in choice_to_pay %}
+                        {% for i,f,p, q in choice_to_pay %}
                             <tr>
                                 <!-- pie charts for A lotteries -->
                                 {% if Constants.small_pies == True %}
@@ -156,7 +156,7 @@
                                 <!-- A lotteries -->
                                 <td class="lottery-a">
                                     {{ lottery_a_hi }} {% trans "with a probability of " %}{{ p }},<br/>
-                                    {{ lottery_a_lo }} {% trans "otherwise" %}
+                                    {{ lottery_a_lo }} {% trans "with a probability of " %}{{ q }}
                                 </td>
 
                                 <!-- radio select form fields -->
@@ -177,7 +177,7 @@
                                 <!-- B lotteries -->
                                 <td class="lottery-b">
                                     {{ lottery_b_hi }} {% trans "with a probability of " %}{{ p }},<br/>
-                                    {{ lottery_b_lo }} {% trans "otherwise" %}
+                                    {{ lottery_b_lo }} {% trans "with a probability of " %}{{ q }}
                                 </td>
 
                                 <!-- pie charts for B lotteries -->

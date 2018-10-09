@@ -1,0 +1,21 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree %}
+
+{% block title %}
+    Part 1
+{% endblock %}
+
+{% block content %}
+
+    <p>
+        You will now play two practice rounds.
+        These rounds are identical to the actual rounds except that:
+        1) during the practice rounds you will only interact with the computer, not with other participants;
+        2) the practice rounds will not affect your earnings.
+    </p>
+
+  {% next_button %}
+
+{% endblock %}
+
+

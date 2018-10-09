@@ -14,8 +14,6 @@ class Intro(Page):
 
 class Page1(Page):
 
-    timeout_seconds = 120
-
     form_model = 'player'
     form_fields = ['choice']
 
@@ -31,9 +29,7 @@ class Page1(Page):
 
 
 class Page2(Page):
-
-    timeout_seconds = 50
-
+    pass
 
 class FinalPage(Page):
 

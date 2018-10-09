@@ -15,6 +15,10 @@
           margin: 20px 0;
          }
 
+        p {
+        text-align: justify;
+        }
+
     </style>
 {% endblock %}
 
@@ -61,27 +65,27 @@
 {# ****************************************************************************************************************** #}
 {% block content %}
 
-<ul>
-    <li>In this part, you have to make 10 decisions, represented in the 10 rows of the table below.</li>
-    <li>For each row of the table, you have to choose between "Option A" and "Option B" by clicking on one of the two buttons.</li>
-    <!--<li>Consider for example, the decision in the top row.</li>-->
-    <!--<ul>-->
-        <!--<li>If you choose Option A, you will earn 6 points with a probability of 10% and 5 points otherwise (i.e. 90% of the time).</li>-->
-        <!--<li>If you choose Option B, you will earn 10 points with a probability of 10% and 1 point otherwise (i.e. 90% of the time).</li>-->
-    <!--</ul>-->
-    <!--<li>As in this example, in any one of the 10 decisions, the probability you will earn the higher payoff (6 if Option A is chosen or 10 if Option B is chosen) is the same between option A and option B.</li>-->
-    <!--<li>As you move down the table, the chances of the higher payoff for each option increase. In the last decision, each option pays the higher payoff for sure.</li>-->
-    <!--<li>For each of the ten decisions, you will be asked to choose Option A or Option B by clicking on the appropriate button.</li>-->
-    <li>The computer will ensure that you switch at most once from Option A to Option B:</li>
-    <ul>
-        <li>If you choose Option A in one decision, the computer will automatically select Option A for all the previous decisions.</li>
-        <li>If you choose Option B in one decision, the computer will automatically select Option B for all the following decisions.</li>
-    </ul>
-    <!--<li>Once you have made a choice in all decisions, you can click on the Next button to submit your choices.</li>-->
-    <!--<li>After you have submitted your choices, one of the 10 decisions will be randomly chosen for your payment.</li>-->
-    <!--<li>For the option you chose, A or B, in this decision, the computer will randomly determine whether you earn the higher or lower payoff.</li>-->
-    <!--<li>At the end of the experiment, the points you have earned in the selected decision will be converted to Euros at an exchange rate of 1/6 Euros per point.</li>-->
-</ul>
+
+
+<p>
+    In this part, you have to <b>make 10 decisions</b>, represented in the 10 rows of the table below.
+    For each row of the table, you have to choose between "Option A" and "Option B" by clicking on one of the two buttons.
+</p>
+<p>
+    Consider for example, the decision in the top row.
+    If you choose Option A, you will earn 6 points with a probability of 10% and 5 points with a probability of 90%.
+    If you choose Option B, you will earn 10 points with a probability of 10% and 1 point with a probability of 90%.
+    As in this example, in any one of the ten decisions, the probability you will earn the higher payoff (6 if Option A is chosen or 10 if Option B is chosen) is the same between option A and option B.
+    As you move down the table, the chances of the higher payoff for each option increase. In the last decision, each option pays the higher payoff for sure.
+</p>
+<p>
+    <b>For each of the ten decisions, you have to choose Option A or Option B</b>.
+    The computer will ensure that you switch at most once from Option A to Option B:
+    if you choose Option A in one decision, the computer will automatically select Option A for all the previous decisions;
+    if you choose Option B in one decision, the computer will automatically select Option B for all the following decisions.
+</p>
+
+
 
     <div class="wrapper">
 
@@ -226,28 +230,14 @@
 
 </div>
 
+<p>
+    After you have submitted your choices, <b>one of the 10 decisions will be randomly chosen for your payment</b>.
+    For the selected decision, the option you have chosen will be played for real by the computer and you will earn either the higher or the lower payoff.
+    At the end of the experiment, the points you have earned in the selected decision will be converted at an exchange rate of {{rate}} per point.
+    Once you have made a choice in all decisions, you can click on the Next button to submit your choices.
+</p>
 
-
-<ul>
-    <!--<li>In this part, you have to make 10 decisions, listed on your screen below. </li>-->
-    <!--<li>In each decision you have to choose between "Option A" and "Option B" by clicking on one of the two buttons.</li>-->
-    <!--<li>Consider for example, the decision in the top row.</li>-->
-    <!--<ul>-->
-        <!--<li>If you choose Option A, you will earn 6 points with a probability of 10% and 5 points otherwise (i.e. 90% of the time).</li>-->
-        <!--<li>If you choose Option B, you will earn 10 points with a probability of 10% and 1 point otherwise (i.e. 90% of the time).</li>-->
-    <!--</ul>-->
-    <!--<li>As in this example, in any one of the 10 decisions, the probability you will earn the higher payoff (6 if Option A is chosen or 10 if Option B is chosen) is the same between option A and option B.</li>-->
-    <!--<li>As you move down the table, the chances of the higher payoff for each option increase. In the last decision, each option pays the higher payoff for sure.</li>-->
-    <!--<li>For each of the ten decisions, you will be asked to choose Option A or Option B by clicking on the appropriate button.</li>-->
-    <!--<li>The computer will ensure that you switch at most once from Option A to Option B.</li>-->
-    <!--<li>If you choose Option A in one decision, the computer will automatically select Option A for all the previous decisions.</li>-->
-    <!--<li>If you choose Option B in one decision, the computer will automatically select Option B for all the following decisions.</li>-->
-    <li>After you have submitted your choices, one of the 10 decisions will be randomly chosen for your payment.</li>
-    <li>For the selected decision, the option you have chosen will be played for real by the computer and you will earn either the higher or the lower payoff.</li>
-    <li>At the end of the experiment, the points you have earned in the selected decision will be converted at an exchange rate of {{rate}} per point.</li>
-    <li>Once you have made a choice in all decisions, you can click on the Next button to submit your choices.</li>
-</ul>
-
+<br>
         {% next_button %}
 
 

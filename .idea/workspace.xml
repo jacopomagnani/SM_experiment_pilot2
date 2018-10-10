@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f7ed58e6-a89b-4cc1-9855-f30c4f76d6e6" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" afterPath="$PROJECT_DIR$/db.sqlite3" />
-      <change beforePath="$PROJECT_DIR$/instructions/pages.py" afterPath="$PROJECT_DIR$/instructions/pages.py" />
-      <change beforePath="$PROJECT_DIR$/instructions/templates/instructions/Page6.html" afterPath="$PROJECT_DIR$/instructions/templates/instructions/Page6.html" />
-      <change beforePath="$PROJECT_DIR$/instructions/templates/instructions/Page8.html" afterPath="$PROJECT_DIR$/instructions/templates/instructions/Page8.html" />
+      <change beforePath="$PROJECT_DIR$/instructions/templates/instructions/Page7.html" afterPath="$PROJECT_DIR$/instructions/templates/instructions/Page7.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -40,8 +36,8 @@
       <file leaf-file-name="Page6.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/instructions/templates/instructions/Page6.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="137">
-              <caret line="32" column="25" lean-forward="true" selection-start-line="32" selection-start-column="25" selection-end-line="32" selection-end-column="25" />
+            <state relative-caret-position="480">
+              <caret line="32" column="25" lean-forward="false" selection-start-line="32" selection-start-column="25" selection-end-line="32" selection-end-column="25" />
               <folding />
             </state>
           </provider>
@@ -57,11 +53,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Page8b.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Page8b.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/instructions/templates/instructions/Page8b.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-294">
+            <state relative-caret-position="240">
               <caret line="16" column="32" lean-forward="false" selection-start-line="16" selection-start-column="32" selection-end-line="16" selection-end-column="32" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Page7.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/instructions/templates/instructions/Page7.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="360">
+              <caret line="24" column="0" lean-forward="true" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -97,7 +103,6 @@
         <option value="$PROJECT_DIR$/instructions/templates/instructions/Page.html" />
         <option value="$PROJECT_DIR$/instructions/templates/instructions/Page4.html" />
         <option value="$PROJECT_DIR$/instructions/templates/instructions/Page9.html" />
-        <option value="$PROJECT_DIR$/instructions/templates/instructions/Page7.html" />
         <option value="$PROJECT_DIR$/instructions/templates/instructions/Page3.html" />
         <option value="$PROJECT_DIR$/instructions/templates/instructions/Page5.html" />
         <option value="$PROJECT_DIR$/instructions/templates/instructions/Page1.html" />
@@ -126,10 +131,11 @@
         <option value="$PROJECT_DIR$/instructions/pages.py" />
         <option value="$PROJECT_DIR$/instructions/templates/instructions/Page6.html" />
         <option value="$PROJECT_DIR$/instructions/templates/instructions/Page8b.html" />
+        <option value="$PROJECT_DIR$/instructions/templates/instructions/Page7.html" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="1">
+  <component name="ProjectFrameBounds">
     <option name="x" value="254" />
     <option name="y" value="23" />
     <option name="width" value="1623" />
@@ -226,7 +232,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="254" y="23" width="1623" height="829" extended-state="1" />
+    <frame x="254" y="23" width="1623" height="829" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21473159" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -562,14 +568,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/instructions/templates/instructions/Page7.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="5" lean-forward="false" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/instructions/templates/instructions/Page9.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
@@ -607,14 +605,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/instructions/templates/instructions/Page8.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="51" lean-forward="false" selection-start-line="20" selection-start-column="51" selection-end-line="20" selection-end-column="51" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/instructions/pages.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="639">
@@ -625,16 +615,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/instructions/templates/instructions/Page6.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="137">
-          <caret line="32" column="25" lean-forward="true" selection-start-line="32" selection-start-column="25" selection-end-line="32" selection-end-column="25" />
+        <state relative-caret-position="480">
+          <caret line="32" column="25" lean-forward="false" selection-start-line="32" selection-start-column="25" selection-end-line="32" selection-end-column="25" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/instructions/templates/instructions/Page8b.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-294">
+        <state relative-caret-position="240">
           <caret line="16" column="32" lean-forward="false" selection-start-line="16" selection-start-column="32" selection-end-line="16" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/instructions/templates/instructions/Page8.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" column="51" lean-forward="false" selection-start-line="20" selection-start-column="51" selection-end-line="20" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/instructions/templates/instructions/Page7.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="24" column="0" lean-forward="true" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
           <folding />
         </state>
       </provider>

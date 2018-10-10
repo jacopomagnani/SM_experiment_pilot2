@@ -41,6 +41,9 @@ class Page8(Page):
     pass
 
 
+class Page8b(Page):
+    pass
+
 class Page9(Page):
     def vars_for_template(self):
         rate = self.session.config['real_world_currency_per_point']
@@ -56,6 +59,7 @@ page_sequence = [
     Page4,
     Page5,
     Page8,
+    Page8b,
     Page6,
     Page7,
     Page9

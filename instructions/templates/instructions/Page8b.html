@@ -10,16 +10,13 @@
 
 
 {% block content %}
-
-
-
-<ul>
-    <li><b>The exact amounts of points you can earn will change</b> in each round, <b>depending on the version of the game</b> you are playing.
+<p>
+    <b>The exact amounts of points you can earn will change</b> in each round, <b>depending on the version of the game</b> you are playing.
         There are two versions of this game, called <b>Game A and Game B</b>.
         There will be 30 rounds for each game, but the exact sequence of games will be random.
         The following tables show you the actual amounts of points you can earn in each game.
-    </li>
-</ul>
+    The only difference between game A and B is the payoff a type X player receives if he does not form a partnership.
+</p>
 
 <br>
 
@@ -28,10 +25,8 @@
         <h6>
             GAME A
         </h6>
-        <p>
-            Points if you <b>form</b> a partnership:
-        </p>
         <table class="tablex" align="center">
+            <caption>Points if you <b>form</b> a partnership:</caption>
             <tr>
                 <td><b>Partner's</b> Type</td>
                 <td>X</td>
@@ -46,10 +41,8 @@
             </tr>
         </table>
         <br>
-        <p>
-            Points if you <b>do not form</b> a partnership:
-        </p>
         <table class="tablex" align="center">
+            <caption>Points if you <b>do not form</b> a partnership:</caption>
             <tr>
                 <td><b>Your</b> Type</td>
                 <td>X</td>
@@ -68,10 +61,8 @@
         <h6>
             GAME B
         </h6>
-        <p>
-            Points if you <b>form</b> a partnership:
-        </p>
-        <table class="tablex" align="center">
+        <table align="center">
+            <caption>Points if you <b>form</b> a partnership:</caption>
             <tr>
                 <td><b>Partner's</b> Type</td>
                 <td>X</td>
@@ -86,10 +77,8 @@
             </tr>
         </table>
         <br>
-        <p>
-            Points if you <b>do not form</b> a partnership:
-        </p>
         <table class="tablex" align="center">
+            <caption>Points if you <b>do not form</b> a partnership:</caption>
             <tr>
                 <td><b>Your</b> Type</td>
                 <td>X</td>
@@ -105,9 +94,6 @@
         </table>
     </div>
 </div>
-<ul>
-    <li>The only difference between game A and B is the payoff a type X player receives if he does not form a partnership.</li>
-</ul>
 
 <br>
 <br><br>
@@ -140,12 +126,17 @@
             text-align: center;
         }
         p {
-            text-align: center;
+            text-align: justify;
             line-height: 150%;
         }
         h6 {
             text-align: center;
             font-size: 160%;
+        }
+
+        caption {
+            caption-side: top;
+            text-align: center;
         }
     </style>
 

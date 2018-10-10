@@ -13,24 +13,23 @@
 
 
 
-
-<ul>
-    <li>Every time you form a partnership, you earn an amount of points that depends only on the type of the other player.</li>
-    <li>Whenever you do not form a partnership, you earn an amount of point that depends only on your own type.</li>
-    <li>
-        For example, consider the following tables.
-    </li>
-</ul>
+<p>
+    Every time you form a partnership, you earn an amount of points that depends only on the type <b>of the other player</b>.
+    Whenever you do not form a partnership, you earn an amount of point that depends only on <b>your own</b> type.
+    Consider the example illustrated in the tables below.
+    In this example, if you form a partnership with an X type you earn 160 points, if you form a partnership with a Y type you earn 80 points and if you form a partnership with a Z type you earn 40 points.
+    If you do not form a partnership and your type is X, you earn 100 points.
+    If you do not form a partnership and your type is Y, you earn 75 points.
+    If you do not form a partnership and your type is Z, you earn 25 points.
+</p>
 
 <br>
 
 <div class = "row">
 
 <div class="column">
-        <p>
-            Points if you <b>form</b> a partnership:
-        </p>
-        <table class="tablex" align="center">
+        <table  align="center">
+            <caption>Points if you <b>form</b> a partnership:</caption>
             <tr>
                 <td><b>Partner's</b> Type</td>
                 <td>X</td>
@@ -46,10 +45,8 @@
         </table>
 </div>
     <div class="column">
-        <p>
-            Points if you <b>do not form</b> a partnership:
-        </p>
-        <table class="tablex" align="center">
+        <table align="center">
+            <caption>Points if you <b>do not form</b> a partnership:</caption>
             <tr>
                 <td><b>Your</b> Type</td>
                 <td>X</td>
@@ -89,7 +86,7 @@
             clear: both;
             display: table;
         }
-        tablex, th, td {
+        th, td {
             border: 1px solid black;
             border-collapse: collapse;
         }
@@ -98,12 +95,17 @@
             text-align: center;
         }
         p {
-            text-align: center;
+            text-align: justify;
             line-height: 150%;
         }
         h6 {
             text-align: center;
             font-size: 160%;
+        }
+
+        caption {
+            caption-side: top;
+            text-align: center;
         }
     </style>
 

@@ -13,7 +13,6 @@ class Page2(Page):
         return {
             'rate': c(rate).to_real_world_currency(self.session),
             'fee': self.session.config['participation_fee'],
-#            'currency': self.session.config['REAL_WORLD_CURRENCY_CODE']
         }
 
 
@@ -43,6 +42,7 @@ class Page8(Page):
 
 class Page8b(Page):
     pass
+
 
 class Page9(Page):
     def vars_for_template(self):

@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f7ed58e6-a89b-4cc1-9855-f30c4f76d6e6" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" afterPath="$PROJECT_DIR$/db.sqlite3" />
-      <change beforePath="$PROJECT_DIR$/instructions/templates/instructions/Page8.html" afterPath="$PROJECT_DIR$/instructions/templates/instructions/Page8.html" />
-      <change beforePath="$PROJECT_DIR$/instructions/templates/instructions/Page8b.html" afterPath="$PROJECT_DIR$/instructions/templates/instructions/Page8b.html" />
+      <change beforePath="$PROJECT_DIR$/settings.py" afterPath="$PROJECT_DIR$/settings.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -15,11 +15,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="settings.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="22" column="52" lean-forward="false" selection-start-line="22" selection-start-column="25" selection-end-line="22" selection-end-column="52" />
+            <state relative-caret-position="555">
+              <caret line="40" column="5" lean-forward="true" selection-start-line="40" selection-start-column="5" selection-end-line="40" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -28,7 +28,7 @@
       <file leaf-file-name="pages.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/instructions/pages.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="639">
+            <state relative-caret-position="885">
               <caret line="61" column="10" lean-forward="false" selection-start-line="61" selection-start-column="10" selection-end-line="61" selection-end-column="10" />
               <folding />
             </state>
@@ -38,18 +38,38 @@
       <file leaf-file-name="Page6.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/instructions/templates/instructions/Page6.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="416">
+            <state relative-caret-position="450">
               <caret line="30" column="4" lean-forward="false" selection-start-line="30" selection-start-column="4" selection-end-line="30" selection-end-column="4" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Page8.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Page8.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/instructions/templates/instructions/Page8.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="16" column="81" lean-forward="false" selection-start-line="16" selection-start-column="81" selection-end-line="16" selection-end-column="81" />
+            <state relative-caret-position="249">
+              <caret line="84" column="24" lean-forward="false" selection-start-line="84" selection-start-column="24" selection-end-line="84" selection-end-column="24" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pages.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mpl/pages.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-981">
+              <caret line="78" column="68" lean-forward="false" selection-start-line="78" selection-start-column="68" selection-end-line="78" selection-end-column="68" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pages.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/AcceptanceCurse/pages.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="280">
+              <caret line="31" column="38" lean-forward="false" selection-start-line="24" selection-start-column="4" selection-end-line="31" selection-end-column="38" />
               <folding />
             </state>
           </provider>
@@ -119,7 +139,6 @@
         <option value="$PROJECT_DIR$/AcceptanceCurse/templates/AcceptanceCurse/Intro.html" />
         <option value="$PROJECT_DIR$/AcceptanceCurse/templates/AcceptanceCurse/Page1.html" />
         <option value="$PROJECT_DIR$/Practice/templates/Practice/FinalPage.html" />
-        <option value="$PROJECT_DIR$/settings.py" />
         <option value="$PROJECT_DIR$/Practice/models.py" />
         <option value="$PROJECT_DIR$/Practice/templates/Practice/Intro.html" />
         <option value="$PROJECT_DIR$/mpl/config.py" />
@@ -134,6 +153,7 @@
         <option value="$PROJECT_DIR$/instructions/templates/instructions/Page7.html" />
         <option value="$PROJECT_DIR$/instructions/templates/instructions/Page8b.html" />
         <option value="$PROJECT_DIR$/instructions/templates/instructions/Page8.html" />
+        <option value="$PROJECT_DIR$/settings.py" />
       </list>
     </option>
   </component>
@@ -161,7 +181,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -169,29 +189,11 @@
               <item name="AC_experiment_base" type="b2602c69:ProjectViewProjectNode" />
               <item name="AC_experiment_base" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="AC_experiment_base" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AC_experiment_base" type="462c0819:PsiDirectoryNode" />
-              <item name="instructions" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AC_experiment_base" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AC_experiment_base" type="462c0819:PsiDirectoryNode" />
-              <item name="instructions" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AC_experiment_base" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AC_experiment_base" type="462c0819:PsiDirectoryNode" />
-              <item name="instructions" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="instructions" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -374,24 +376,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/AcceptanceCurse/pages.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="25">
-          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/instructions/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mpl/pages.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="78" column="68" lean-forward="false" selection-start-line="78" selection-start-column="68" selection-end-line="78" selection-end-column="68" />
         </state>
       </provider>
     </entry>
@@ -588,7 +576,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="365">
           <caret line="124" column="0" lean-forward="false" selection-start-line="124" selection-start-column="0" selection-end-line="124" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -599,17 +586,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="22" column="52" lean-forward="false" selection-start-line="22" selection-start-column="25" selection-end-line="22" selection-end-column="52" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/instructions/pages.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="639">
+        <state relative-caret-position="885">
           <caret line="61" column="10" lean-forward="false" selection-start-line="61" selection-start-column="10" selection-end-line="61" selection-end-column="10" />
           <folding />
         </state>
@@ -617,7 +596,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/instructions/templates/instructions/Page6.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="416">
+        <state relative-caret-position="450">
           <caret line="30" column="4" lean-forward="false" selection-start-line="30" selection-start-column="4" selection-end-line="30" selection-end-column="4" />
           <folding />
         </state>
@@ -641,8 +620,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/instructions/templates/instructions/Page8.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="81" lean-forward="false" selection-start-line="16" selection-start-column="81" selection-end-line="16" selection-end-column="81" />
+        <state relative-caret-position="249">
+          <caret line="84" column="24" lean-forward="false" selection-start-line="84" selection-start-column="24" selection-end-line="84" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mpl/pages.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-981">
+          <caret line="78" column="68" lean-forward="false" selection-start-line="78" selection-start-column="68" selection-end-line="78" selection-end-column="68" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AcceptanceCurse/pages.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="280">
+          <caret line="31" column="38" lean-forward="false" selection-start-line="24" selection-start-column="4" selection-end-line="31" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="555">
+          <caret line="40" column="5" lean-forward="true" selection-start-line="40" selection-start-column="5" selection-end-line="40" selection-end-column="5" />
           <folding />
         </state>
       </provider>

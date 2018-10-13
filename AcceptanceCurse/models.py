@@ -18,10 +18,11 @@ Matching Game with noisy signals
 class Constants(BaseConstants):
     name_in_url = 'game'
     players_per_group = 2
-    num_rounds = 2
+    num_rounds = 60
     game_space = [0, 1]
     game_labels = ["A", "B"]
-    game_sequence = [0, 1]
+    game_sequence = [0, 1, 0, 1, 0, 0, 0, 1, 1, 0, 0, 1, 1, 1, 1, 1, 0, 1, 1, 0, 1, 1, 0, 0, 1, 1, 1, 0,
+                     1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 1, 0, 1, 1, 0, 1, 0, 0, 0, 1, 1, 1, 0, 0]
     type_space = [1, 2, 3]
     type_labels = ["X", "Y", "Z"]
     A_match_value = [160, 80, 40]

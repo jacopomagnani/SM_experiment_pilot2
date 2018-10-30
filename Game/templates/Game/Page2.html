@@ -1,0 +1,73 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree %}
+
+{% block title %}
+    Round {{subsession.round_number}}
+{% endblock %}
+
+{% block content %}
+
+<p>
+    Your partner's multiplier is: {{player.partner_type}}.
+    Your points are: {{player.points}}.
+</p>
+</br>
+</br>
+<h4>Summary Table</h4>
+<table class="tablex">
+    <tr>
+        <th colspan="2"> Group 1</th>
+        <th colspan="2">Group 2</th>
+    </tr>
+    <tr>
+        <td> Player's Multiplier</td>
+        <td> Player's Bid </td>
+        <td> Player's Bid </td>
+        <td> Player's Multiplier</td>
+    </tr>
+    {% for r in ranks_set %}
+    <tr>
+        {% for p in group.get_players %}{% if p.side == 0 and p.rank == r%} {% if p == player%}<td style="background-color:#F3ADD3">{{p.type}}</td>{% else %}<td>{{p.type}}</td>{% endif %}{% endif %}{% endfor %}
+        {% for p in group.get_players %}{% if p.side == 0 and p.rank == r%} {% if p == player%}<td style="background-color:#F3ADD3">{{p.bid|floatformat}}</td>{% else %}<td>{{p.bid|floatformat}}</td>{% endif %}{% endif %}{% endfor %}
+        {% for p in group.get_players %}{% if p.side == 1 and p.rank == r%} {% if p == player%}<td style="background-color:#F3ADD3">{{p.bid|floatformat}}</td>{% else %}<td>{{p.bid|floatformat}}</td>{% endif %}{% endif %}{% endfor %}
+        {% for p in group.get_players %}{% if p.side == 1 and p.rank == r%} {% if p == player%}<td style="background-color:#F3ADD3">{{p.type}}</td>{% else %}<td>{{p.type}}</td>{% endif %}{% endif %}{% endfor %}
+    </tr>
+    {% endfor %}
+</table>
+</br>
+</br>
+
+
+{% next_button %}
+
+{% endblock %}
+
+{% block styles %}
+    <style>
+        .otree-timer {
+            display: none;
+        }
+        tablex, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 5px;
+            text-align: center;
+        }
+    </style>
+{% endblock %}
+
+{% block scripts %}
+    <script>
+        $(function () {
+            $('.otree-timer__time-left').on('update.countdown', function (event) {
+                if (event.offset.totalSeconds === 5) {
+                    $('.otree-timer').show();
+                }
+            });
+        });
+    </script>
+{% endblock %}
+
+

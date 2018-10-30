@@ -17,11 +17,11 @@ SESSION_CONFIG_DEFAULTS = {
 
 SESSION_CONFIGS = [
     {
-        'name': 'AcceptanceCurse',
-        'display_name': "Matching with Noise",
-        'num_demo_participants': 2,
-        'app_sequence': ['instructions', 'Practice', 'AcceptanceCurse', 'mpl', 'crt','survey', 'finalpage'],
-        'players_per_group': 8,
+        'name': 'configs',
+        'display_name': "My Configs",
+        'num_demo_participants': 6,
+        'app_sequence': ['Game'],
+        'players_per_group': 6,
         'doc': """
             Note: 'players_per_group' must be an even number;
             when the number of participants is not divisible by the number of players per group, 
@@ -47,11 +47,7 @@ ROOMS = [
         'name': 'experiment',
         'display_name': 'experiment',
         'participant_label_file': '_rooms/room1.txt',
-    },
-    {
-        'name': 'live_demo',
-        'display_name': 'Room for live demo (no participant labels)',
-    },
+    }
 ]
 
 

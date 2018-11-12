@@ -4,48 +4,25 @@ from otree.api import (
 )
 
 import random
-import numpy
-
 
 
 author = 'Jacopo Magnani'
 
 doc = """
-Matching Game with noisy signals
+Pilot Design for SM
 """
 
 
 class Constants(BaseConstants):
-    name_in_url = 'practice'
-    players_per_group = None
-    num_rounds = 2
-    game_space = [0, 1]
-    game_labels = ["A", "B"]
-    game_sequence = [0, 1]
-    type_space = [1, 2, 3]
-    type_labels = ["X", "Y", "Z"]
-    A_match_value = [160, 80, 40]
-    A_reservation_value = [100, 75, 25]
-    B_match_value = [160, 80, 40]
-    B_reservation_value = [80, 75, 25]
-    signal_space = [1, 2, 3]
-    signal_names = ["red", "yellow", "blue"]
-    pL = [0, 1/2, 1/2]
-    pM = [0, 1, 0]
-    pH = [1/2, 1/2, 0]
+    name_in_url = 'practice_round'
+    players_per_group = 6
+    num_rounds = 1
+    part1_end = 1
+    type_space = [2, 10]
 
 
 class Subsession(BaseSubsession):
-
-    game = models.IntegerField()
-    game_name = models.StringField()
-
-    def creating_session(self):
-        #game sequence
-        if self.round_number == 1:
-            for t in range(1, Constants.num_rounds+1):
-                self.in_round(t).game = Constants.game_sequence[t-1]
-                self.in_round(t).game_name = Constants.game_labels[self.in_round(t).game]
+    pass
 
 
 class Group(BaseGroup):
@@ -53,40 +30,47 @@ class Group(BaseGroup):
 
 
 class Player(BasePlayer):
-    type = models.IntegerField()
-    partner_type = models.IntegerField()
-    signal = models.IntegerField()
-    choice = models.IntegerField(
-        choices=[
-            [1, 'Yes'],
-            [0, 'No'],
-        ],
-        widget=widgets.RadioSelectHorizontal
-    )
-    partner_choice = models.IntegerField()
-    match = models.IntegerField()
+    type = models.FloatField()
+    side = models.IntegerField()
+    rank = models.IntegerField()
+    partner_type = models.FloatField()
+    bid = models.FloatField(min=0, max=50)
     late = models.IntegerField()
-    points = models.IntegerField()
+    points = models.FloatField()
 
-    def initialize(self):
-        # assign type, assign random partner's type and generate signal
-        for t in range(1, Constants.num_rounds+1):
-            self.in_round(t).type = random.choice(Constants.type_space)
-            self.in_round(t).partner_type = random.choice(Constants.type_space)
-            if self.in_round(t).partner_type == 1:
-                self.in_round(t).signal = numpy.random.choice(Constants.signal_space, p=Constants.pH)
-            elif self.in_round(t).partner_type == 2:
-                self.in_round(t).signal = numpy.random.choice(Constants.signal_space, p=Constants.pM)
-            elif self.in_round(t).partner_type == 3:
-                self.in_round(t).signal = numpy.random.choice(Constants.signal_space, p=Constants.pL)
+    def initialize_player(self):
+        self.type = round(random.uniform(Constants.type_space[0], Constants.type_space[1]),1)
+        self.side = 0
 
     def get_outcome(self):
-        if self.subsession.game == 0:
-            match_value = Constants.A_match_value
-            reservation_value = Constants.A_reservation_value
-        elif self.subsession.game == 1:
-            match_value = Constants.B_match_value
-            reservation_value = Constants.B_reservation_value
-        self.partner_choice = random.choice([0, 1])
-        self.match = self.choice * self.partner_choice
-        self.points = self.match * match_value[self.partner_type-1] + (1 - self.match) * reservation_value[self.type-1]
+        me_list = [1, 0, 0, 0, 0, 0]
+        side_list = [0, 0, 0, 1, 1, 1]
+        type_list = [round(random.uniform(Constants.type_space[0], Constants.type_space[1]), 1) for i in range(6)]
+        type_list[0] = self.type
+        bid_list = [random.uniform(0, 10) for i in range(6)]
+        bid_list[0] = self.bid
+        rank_list = [0, 0, 0, 0, 0, 0]
+        side0_bids = [bid_list[i] for i in range(6) if side_list[i] == 0]
+        side1_bids = [bid_list[i] for i in range(6) if side_list[i] == 1]
+        side0_bids.sort()
+        side1_bids.sort()
+        for b in set(side0_bids):
+            rank_set = [i for i, x in enumerate(side0_bids) if x == b]
+            for i in range(6):
+                if side_list[i] == 0 and bid_list[i] == b:
+                    rank_list[i] = rank_set.pop(random.randrange(0, len(rank_set)))
+        for b in set(side1_bids):
+            rank_set = [i for i, x in enumerate(side1_bids) if x == b]
+            for i in range(6):
+                if side_list[i] == 1 and bid_list[i] == b:
+                    rank_list[i] = rank_set.pop(random.randrange(0, len(rank_set)))
+        self.rank = rank_list[0]
+        self.participant.vars['practice_data'] = [{"id": me_list[i], "side": side_list[i], "type": type_list[i], "bid": bid_list[i], "rank": rank_list[i]} for i in range(6)]
+        self.points = 0 - self.bid
+        self.partner_type = 0
+        for q in self.participant.vars['practice_data']:
+            if self.rank == q['rank'] and self.side != q['side']:
+                self.partner_type = q['type']
+                self.points = self.type * q['type'] - self.bid
+        self.points = round(self.points, 1)
+        self.participant.vars['j'] = 1

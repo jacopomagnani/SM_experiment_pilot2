@@ -2,7 +2,7 @@
 {% load staticfiles otree %}
 
 {% block title %}
-    Round {{subsession.round_number}}
+    Part {{subsession.part}} Round {{subsession.round_number_in_part}}
 {% endblock %}
 
 {% block content %}
@@ -15,36 +15,32 @@
     </p>
 
     {% formfield player.bid label="Enter your bid:" %}
-
-    {% next_button %}
     <br />
-    <!--<br />-->
-    <!--<br />-->
-    <!--<h4>History Table</h4>-->
-    <!--<table class="tablex">-->
-        <!--<tr>-->
-            <!--<th>Round</th>-->
-            <!--<th>Game</th>-->
-            <!--<th>Your Type</th>-->
-            <!--<th>Your Clue</th>-->
-            <!--<th>Your Choice</th>-->
-            <!--<th>Partner's Choice</th>-->
-            <!--<th>Partner's Type</th>-->
-            <!--<th>Your points</th>-->
-        <!--</tr>-->
-        <!--{% for p in player.in_all_rounds %}-->
-            <!--<tr>-->
-                <!--<td>{{ p.subsession.round_number }}</td>-->
-                <!--<td>{{ p.subsession.game_name }} </td>-->
-                <!--<td>{% if p.type == 1 %} X {% elif p.type == 2 %} Y {% elif p.type == 3 %} Z {% endif %}</td>-->
-                <!--<td>{% if p.signal == 1 %} Red {% elif p.signal == 2 %} Yellow {% elif p.signal == 3 %} Blue {% endif %}</td>-->
-                <!--<td>{% if p.round_number == player.round_number %} - {% elif p.choice %} Yes {% else %} No {% endif %}</td>-->
-                <!--<td>{% if p.round_number == player.round_number %} - {% elif p.partner_choice %} Yes {% else %} No {% endif %}</td>-->
-                <!--<td>{% if p.round_number == player.round_number %} - {% elif p.partner_type == 1 %} X {% elif p.partner_type == 2 %} Y {% elif p.partner_type == 3 %} Z {% endif %}</td>-->
-                <!--<td>{% if p.round_number == player.round_number %} - {% else %} {{p.points}} {% endif %}</td>-->
-            <!--</tr>-->
-        <!--{% endfor %}-->
-    <!--</table>-->
+    {% next_button %}
+
+    <br />
+    <br />
+    <h4>History Table</h4>
+    <table class="tablex">
+        <tr>
+            <th>Part</th>
+            <th>Round</th>
+            <th>Your Multiplier</th>
+            <th>Your Bid</th>
+            <th>Your Partner's Multiplier</th>
+            <th>Your points</th>
+        </tr>
+        {% for p in player.in_all_rounds %}
+            <tr>
+                <td>{{ p.subsession.part }}</td>
+                <td>{{ p.subsession.round_number_in_part }}</td>
+                <td>{{p.type}}</td>
+                <td>{% if p.round_number == player.round_number %} - {% else %} {{p.bid|floatformat}} {% endif %}</td>
+                <td>{% if p.round_number == player.round_number %} - {% else %} {{p.partner_type}} {% endif %}</td>
+                <td>{% if p.round_number == player.round_number %} - {% else %} {{p.points}} {% endif %}</td>
+            </tr>
+        {% endfor %}
+    </table>
 
 {% endblock %}
 

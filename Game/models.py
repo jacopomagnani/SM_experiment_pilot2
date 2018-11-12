@@ -4,7 +4,6 @@ from otree.api import (
 )
 
 import random
-import numpy
 
 
 author = 'Jacopo Magnani'
@@ -17,27 +16,33 @@ Pilot Design for SM
 class Constants(BaseConstants):
     name_in_url = 'game'
     players_per_group = 6
-    num_rounds = 2
+    num_rounds = 4
+    poll_round = 3
+    part1_end = 2
+    part2_end = 4
     type_space = [2, 10]
 
 
 class Subsession(BaseSubsession):
 
+    part = models.IntegerField()
+    round_number_in_part = models.IntegerField()
+
     def creating_session(self):
-        # set paying round and game sequence
         if self.round_number == 1:
-            paying_round = random.randint(1, Constants.num_rounds)
-            self.session.vars['paying_round'] = paying_round
-        # # form groups allowing for variable group size
-        # group_matrix = []
-        # players = self.get_players()
-        # ppg = self.session.config['players_per_group']
-        # for i in range(0, len(players), ppg):
-        #     group_matrix.append(players[i:i + ppg])
-        # self.set_group_matrix(group_matrix)
+            for t in range(1, Constants.num_rounds+1):
+                if t <= Constants.part1_end:
+                    self.in_round(t).part = 1
+                    self.in_round(t).round_number_in_part = self.in_round(t).round_number
+                else:
+                    self.in_round(t).part = 2
+                    self.in_round(t).round_number_in_part = self.in_round(t).round_number - Constants.part1_end
 
 
 class Group(BaseGroup):
+
+    num_yes = models.IntegerField()
+    num_no = models.IntegerField()
 
     def initialize_group(self):
         side_list = list([0, 0, 0, 1, 1, 1])
@@ -66,15 +71,20 @@ class Group(BaseGroup):
         # form matches
         for p in self.get_players():
             p.points = 0 - p.bid
+            p.partner_type = 0
             for q in self.get_players():
                 if p.rank == q.rank and p.side != q.side:
                     p.partner_type = q.type
                     p.points = p.type * q.type - p.bid
-            p.points = round(p.points,2)
-            if self.subsession.round_number == self.session.vars['paying_round']:
-                p.payoff = p.points
+            p.points = round(p.points, 1)
+            if p.round_number <= Constants.part1_end:
+                p.payoff = p.points / Constants.part1_end
             else:
-                p.payoff = c(0)
+                p.payoff = p.points / (1+Constants.part2_end-Constants.poll_round)
+
+    def get_poll_results(self):
+        self.num_yes = sum([p.message for p in self.get_players()])
+        self.num_no = sum([(1-p.message) for p in self.get_players()])
 
 
 class Player(BasePlayer):
@@ -84,4 +94,11 @@ class Player(BasePlayer):
     partner_type = models.FloatField()
     bid = models.FloatField(min=0, max=50)
     late = models.IntegerField()
-    points = models.IntegerField()
+    points = models.FloatField()
+    message = models.IntegerField(
+        choices=[
+            [1, 'I agree with the above statement and I pledge to bid 0 in the next rounds.'],
+            [0, 'I do not agree with the above statement and I do not pledge to bid 0 in the next rounds.'],
+        ],
+        widget=widgets.RadioSelect
+    )

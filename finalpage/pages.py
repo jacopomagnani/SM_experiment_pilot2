@@ -4,7 +4,11 @@ from .models import Constants
 
 
 class MyPage(Page):
-    pass
+    def vars_for_template(self):
+        return {
+            'rate_value': self.session.config['real_world_currency_per_point'],
+            'fee': self.session.config['participation_fee']
+        }
 
 
 page_sequence = [

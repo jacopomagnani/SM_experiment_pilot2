@@ -13,59 +13,12 @@
 
 
 
-<p>
-    Every time you form a partnership, you earn an amount of points that depends only on the type <b>of the other player</b>.
-    Whenever you do not form a partnership, you earn an amount of point that depends only on <b>your own</b> type.
-    Consider the example illustrated in the tables below.
-    In this example, if you form a partnership with an X type you earn 160 points, if you form a partnership with a Y type you earn 80 points and if you form a partnership with a Z type you earn 40 points.
-    If you do not form a partnership and your type is X, you earn 100 points.
-    If you do not form a partnership and your type is Y, you earn 75 points.
-    If you do not form a partnership and your type is Z, you earn 25 points.
-</p>
-
-<br>
-
-<div class = "row">
-
-<div class="column">
-        <table  align="center">
-            <caption>Points if you <b>form</b> a partnership:</caption>
-            <tr>
-                <td><b>Partner's</b> Type</td>
-                <td>X</td>
-                <td>Y</td>
-                <td>Z</td>
-            </tr>
-            <tr>
-                <td>Your Points</td>
-                <td>160</td>
-                <td>80</td>
-                <td>40</td>
-            </tr>
-        </table>
-</div>
-    <div class="column">
-        <table align="center">
-            <caption>Points if you <b>do not form</b> a partnership:</caption>
-            <tr>
-                <td><b>Your</b> Type</td>
-                <td>X</td>
-                <td>Y</td>
-                <td>Z</td>
-            </tr>
-            <tr>
-                <td>Your Points</td>
-                <td>100</td>
-                <td>75</td>
-                <td>25</td>
-            </tr>
-        </table>
-    </div>
-</div>
+<ul>
+    <li>Once you have submitted a bid and have been assigned a partner, the amount of points you earn in this round is given by the following formula:</li>
+</ul>
 
 
-<br>
-<br><br>
+<h6>your points = (your multiplier)<span>&times;</span>(your partner's multiplier)<span>&minus;</span>(your bid)</h6>
 
     {% next_button %}
 
@@ -76,37 +29,6 @@
 {% block styles %}
     <style>
 
-        .column {
-            float: left;
-            width: 50%;
-            padding: 5px;
-        }
-        .row::after {
-            content: "";
-            clear: both;
-            display: table;
-        }
-        th, td {
-            border: 1px solid black;
-            border-collapse: collapse;
-        }
-        th, td {
-            padding: 5px;
-            text-align: center;
-        }
-        p {
-            text-align: justify;
-            line-height: 150%;
-        }
-        h6 {
-            text-align: center;
-            font-size: 160%;
-        }
-
-        caption {
-            caption-side: top;
-            text-align: center;
-        }
+        h6 {text-align:center;}
     </style>
-
 {% endblock %}

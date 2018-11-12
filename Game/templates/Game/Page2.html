@@ -2,18 +2,11 @@
 {% load staticfiles otree %}
 
 {% block title %}
-    Round {{subsession.round_number}}
+    Part {{subsession.part}} Round {{subsession.round_number_in_part}} - Results
 {% endblock %}
 
 {% block content %}
 
-<p>
-    Your partner's multiplier is: {{player.partner_type}}.
-    Your points are: {{player.points}}.
-</p>
-</br>
-</br>
-<h4>Summary Table</h4>
 <table class="tablex">
     <tr>
         <th colspan="2"> Group 1</th>
@@ -36,8 +29,14 @@
 </table>
 </br>
 </br>
-
-
+<h6>
+    Your points = (your multiplier)<span>&times;</span>(your partner's multiplier)<span>&minus;</span>(your bid)<span>&equals;</span>
+    {{player.type}}<span>&times;</span>{{player.partner_type}}<span>&minus;</span>{{player.bid|floatformat}}<span>&equals;</span>
+    {{match_payoff|floatformat}}<span>&minus;</span>{{player.bid|floatformat}}<span>&equals;</span>
+    {{player.points}}
+</h6>
+</br>
+</br>
 {% next_button %}
 
 {% endblock %}
@@ -47,7 +46,11 @@
         .otree-timer {
             display: none;
         }
-        tablex, th, td {
+        table.tablex {
+        margin-left:auto;
+        margin-right:auto;
+        }
+        table.tablex, th, td {
             border: 1px solid black;
             border-collapse: collapse;
         }
@@ -55,6 +58,7 @@
             padding: 5px;
             text-align: center;
         }
+        h6 {text-align:center;}
     </style>
 {% endblock %}
 

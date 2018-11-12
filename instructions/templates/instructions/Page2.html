@@ -13,22 +13,32 @@
 
 
 <p>
-    This experiment will consist of <b>four parts</b>.
+    This experiment will consist of <b>two parts</b>.
 </p>
 
 <p>
     At the end of the experiment, you will be paid {{ fee }}, plus earnings based on the points you have earned during the experiment.
-    Your points will be converted at an exchange rate of {{rate}} per point.
+    The computer will calculate your average score in Part 1 and your average score in Part 2 and sum them up.
+    This value will then be converted at an exchange rate of AED{{rate_value}} per point and rounded to the nearest integer.
     To sum up, your final payment is given by the following formula:
     <center>
     <em>
-        {{rate}} * (your points) + {{fee}}
+        {{fee}}  <span>+</span>  AED{{rate_value}} <span>&times;</span> (your average score in Part 1  <span>+</span>  your average score in Part 2)
     </em>
     </center>
 </p>
-
-
+<br>
+<p class="a">
+    Note: in the unlikely event that the sum of your average scores in Part 1 and Part 2 is negative, you will earn {{fee}}.
+</p>
+<br>
     {% next_button %}
 
 {% endblock %}
 
+
+{% block styles %}
+    <style>
+        p.a {font-size: small}
+    </style>
+{% endblock %}

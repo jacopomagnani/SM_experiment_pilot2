@@ -1,0 +1,112 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree %}
+
+{% block title %}
+    QUESTIONS
+
+<h5>
+    Question 3
+</h5>
+{% endblock %}
+
+{% block content %}
+<p>
+    The correct answer is: 'Player B may earn any of the following amounts of points: 0, 6 or 24.'.
+</p>
+<br>
+<h6> Explanation</h6>
+<br>
+<div class = "row">
+    <div class="column">
+        <table align="center">
+            <tr>
+                <th colspan="3"> Group 1</th>
+            </tr>
+            <tr>
+                <td> Player</td>
+                <td> Player's Multiplier</td>
+                <td> Player's Bid </td>
+            </tr>
+                <tr> <td> A</td> <td> 2</td> <td> 10</td> </tr>
+                <tr> <td> B</td> <td> 3</td> <td> 6</td> </tr>
+                <tr> <td> C</td> <td> 6</td> <td> 8</td> </tr>
+        </table>
+    </div>
+    <div class="column">
+        <table align="center">
+            <tr>
+                <th colspan="3"> Group 2</th>
+            </tr>
+            <tr>
+                <td> Player</td>
+                <td> Player's Multiplier</td>
+                <td> Player's Bid </td>
+            </tr>
+                <tr> <td> D</td> <td> 2</td> <td> 1</td> </tr>
+                <tr> <td> E</td> <td> 4</td> <td> 1</td> </tr>
+                <tr> <td> F</td> <td> 10</td> <td> 1</td> </tr>
+        </table>
+    </div>
+</div>
+
+<br>
+<p>
+    Player B bid 6 and the other players in his group bid 10 and 8.
+    Thus, player B is the lowest bidder in his group.
+</p>
+<p>
+    In Group 2, all the three players bid the same value.
+    Therefore, the computer will randomly determine the ranking of their bids.
+</p>
+<p>
+    If the computer determines D is the lowest bidder in his group, then player B will be paired with player D and his score will be:
+</p>
+<p class="c">
+    (B's multiplier)<span>&times;</span>(D's multiplier)<span>&minus;</span>(B's bid) = 3<span>&times;</span>2<span>&minus;</span>6 = 6-6=0
+</p>
+<p>
+    If the computer determines E is the lowest bidder in his group, then player B will be paired with player E and his score will be:
+</p>
+<p class="c">
+    (B's multiplier)<span>&times;</span>(E's multiplier)<span>&minus;</span>(B's bid) = 3<span>&times;</span>4<span>&minus;</span>6 = 12-6=6
+</p>
+<p>
+    If the computer determines F is the lowest bidder in his group, then player B will be paired with player F and his score will be:
+</p>
+<p class="c">
+    (B's multiplier)<span>&times;</span>(F's multiplier)<span>&minus;</span>(B's bid) = 3<span>&times;</span>10<span>&minus;</span>6 = 30-6=24
+</p>
+<p>
+    Thus, player B may earn any of these three scores, depending on the random choice of the computer.
+</p>
+<br>
+<br>
+<br>
+    {% next_button %}
+
+{% endblock %}
+
+{% block styles %}
+    <style>
+
+        th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 5px;
+            text-align: center;
+        }
+        .column {
+            float: left;
+            width: 50%;
+            padding: 5px;
+        }
+        .row::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+        p.c {text-align: center;}
+    </style>
+{% endblock %}

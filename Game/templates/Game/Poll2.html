@@ -1,0 +1,24 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree %}
+
+{% block title %}
+    Part 2 - Survey results
+{% endblock %}
+
+{% block content %}
+
+    <p>
+        Here are the results of the survey.
+    </p>
+    <p>
+        {{ group.num_yes}} participants chose the first option ('I agree with the above statement and I pledge to bid 0 in the next rounds.')
+    </p>
+    <p>
+        {{ group.num_no}} participants chose the second option ('I do not agree with the above statement and I do not pledge to bid 0 in the next rounds.')
+    </p>
+
+    {% next_button %}
+
+{% endblock %}
+
+

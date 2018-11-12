@@ -4,7 +4,7 @@
 {% block title %}
     INSTRUCTIONS - PART 1
 <h5>
-    FORMING A PARTNERSHIP
+    BIDS
 </h5>
 {% endblock %}
 
@@ -14,9 +14,18 @@
 
 
 <ul>
-    <li>After you have received a clue about your potential partner’s type, you can <b>decide whether you want to form a partnership or not</b>.</li>
-    <li>Only <b>if you and the other player agree</b> to form a partnership, a partnership is formed.</li>
-    <li>For example, if you choose to form a partnership but the other player does not, the partnership is not formed.</li>
+    <li>You cannot choose with whom to form a pair.</li>
+    <li>However, you can try to influence the way in which you are paired to others by submitting a <b>bid</b>.</li>
+    <li>A bid is a number between 0 and 50. Each <b>bid is subtracted from your points</b> at the end of the round. If you do not want to bid, then you can choose to bid zero.</li>
+    <li>After all players in a market have submitted their bids, the <b>computer will rank the bids</b> of the three players in Group 1 from highest to lowest.</li>
+    <li>Similarly, the computer will rank the bids of the three players in Group 2 from highest to lowest.</li>
+    <li>The <b>computer will then pair players whose bids have the same ranking</b>, that is:</li>
+        <ul>
+            <li>the player who submitted the highest bid in Group 1 is paired with the  player who submitted the highest bid in Group 2.</li>
+            <li>the player who submitted the second-highest bid in Group 1 is paired with the  player who submitted the second-highest bid in Group 2.</li>
+            <li>the player who submitted the lowest bid in Group 1 is paired with the  player who submitted the lowest bid in Group 2.</li>
+        </ul>
+    <li>The <b>computer will randomly break any tie</b>: if two or three players in the same group have submitted the same bid, the computer will randomly rank their bids.</li>
 </ul>
 
     {% next_button %}

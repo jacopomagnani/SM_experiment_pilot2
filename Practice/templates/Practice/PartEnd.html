@@ -1,0 +1,56 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree %}
+
+{% block title %}
+    The Practice Round Is Over
+{% endblock %}
+
+{% block content %}
+
+    <p>
+        The practice round is over.
+    </p>
+
+    <br />
+  {% next_button %}
+    <br />
+    <br />
+    <h4>History Table</h4>
+    <table class="tablex">
+        <tr>
+            <th>Part</th>
+            <th>Round</th>
+            <th>Your Multiplier</th>
+            <th>Your Bid</th>
+            <th>Your Partner's Multiplier</th>
+            <th>Your points</th>
+        </tr>
+        {% for p in player.in_all_rounds %}
+            <tr>
+                <td>Practice</td>
+                <td>{{ p.subsession.round_number }}</td>
+                <td>{{p.type}}</td>
+                <td>{{p.bid|floatformat}}</td>
+                <td>{{p.partner_type}}</td>
+                <td>{{p.points}}</td>
+            </tr>
+        {% endfor %}
+    </table>
+
+
+{% endblock %}
+
+
+{% block styles %}
+    <style>
+        tablex, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 5px;
+            text-align: center;
+        }
+    </style>
+
+{% endblock %}

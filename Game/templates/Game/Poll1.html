@@ -1,0 +1,36 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree %}
+
+{% block title %}
+    Part 2 - Survey
+{% endblock %}
+
+{% block content %}
+
+
+    <p>
+        Before the first round of Part 2, you and all the other participants in your market are asked to respond to the following survey by choosing one of the available options.
+        Once all participants in your market have answered the survey, and before playing the first round of Part 2,
+        <jj>the computer will inform everyone of how many participants have chosen each of the options</jj>.
+    </p>
+
+    <h4>Survey</h4>
+    <p>
+        Consider the following statement:
+        "<em>We will all be better off if everyone chooses a bid equal to zero.</em> "
+    </p>
+
+    {% formfield player.message label="Choose one of the following two options:"%}
+
+    {% next_button %}
+
+{% endblock %}
+
+
+
+{% block styles %}
+    <style>
+
+        jj {text-decoration: underline;}
+    </style>
+{% endblock %}

@@ -4,9 +4,42 @@ from .models import Constants
 import random
 
 
-class Intro(Page):
+class Part1Intro(Page):
     def is_displayed(self):
         return self.round_number == 1
+
+
+class Part2Intro(Page):
+    def is_displayed(self):
+        return self.round_number == Constants.poll_round
+
+    def vars_for_template(self):
+        return {
+            'rate_value': self.session.config['real_world_currency_per_point'],
+        }
+
+
+class Poll1(Page):
+
+    form_model = 'player'
+    form_fields = ['message']
+
+    def is_displayed(self):
+        return self.round_number == Constants.poll_round
+
+
+class PollWaitPage(WaitPage):
+
+    def is_displayed(self):
+        return self.round_number == Constants.poll_round
+
+    def after_all_players_arrive(self):
+        self.group.get_poll_results()
+
+
+class Poll2(Page):
+    def is_displayed(self):
+        return self.round_number == Constants.poll_round
 
 
 class MyWaitPage1(WaitPage):
@@ -36,29 +69,48 @@ class MyWaitPage2(WaitPage):
 
 class Page2(Page):
 
-    timeout_seconds = 60
-
-    def vars_for_template(self):
-        return {'ranks_set': [2, 1, 0]}
-
-
-class FinalPage(Page):
-
-    def is_displayed(self):
-        return self.round_number == Constants.num_rounds
+    timeout_seconds = 120
 
     def vars_for_template(self):
         return {
-            'total_payoff': sum([p.payoff for p in self.player.in_all_rounds()]),
-            'paying_round': self.session.vars['paying_round']
+            'ranks_set': [2, 1, 0],
+            'match_payoff': self.player.type * self.player.partner_type
         }
 
 
+class PartEnd(Page):
+
+    def is_displayed(self):
+        return self.round_number == Constants.part1_end or self.round_number == Constants.part2_end
+
+    def vars_for_template(self):
+        if self.round_number == Constants.part1_end:
+            return {
+                'mean_payoff': sum([p.payoff for p in self.player.in_rounds(1, Constants.part1_end)])
+            }
+        elif self.round_number == Constants.part2_end:
+            return {
+                'mean_payoff': sum(
+                    [p.payoff for p in self.player.in_rounds(Constants.poll_round, Constants.part2_end)])
+            }
+
+    def before_next_page(self):
+        if self.round_number == Constants.part1_end:
+            self.participant.vars['mean_payoff_part1'] = sum([p.payoff for p in self.player.in_rounds(1, Constants.part1_end)])
+        elif self.round_number == Constants.part2_end:
+            self.participant.vars['mean_payoff_part2'] = sum(
+                    [p.payoff for p in self.player.in_rounds(Constants.poll_round, Constants.part2_end)])
+
+
 page_sequence = [
-    Intro,
+    Part1Intro,
+    Part2Intro,
+    Poll1,
+    PollWaitPage,
+    Poll2,
     MyWaitPage1,
     Page1,
     MyWaitPage2,
     Page2,
-    FinalPage
+    PartEnd
 ]

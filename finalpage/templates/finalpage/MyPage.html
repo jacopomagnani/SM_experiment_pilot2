@@ -9,8 +9,23 @@
 <p>
     The experiment is over.
 </p>
+
 <p>
-    Your payment is: {{player.participant.payoff_plus_participation_fee}}.
+    Your average score in Part 1 is: {{player.participant.vars.mean_payoff_part1}}.
 </p>
+
+<p>
+    Your average score in Part 2 is: {{player.participant.vars.mean_payoff_part2}}.
+</p>
+
+
+<p>
+    Your final payment is:
+    <em>
+        {{fee}}  <span>+</span>  AED{{rate_value}} <span>&times;</span> (your average score in Part 1  <span>+</span>  your average score in Part 2) =
+        {{player.participant.payoff_plus_participation_fee}}
+    </em>
+</p>
+
 
 {% endblock %}

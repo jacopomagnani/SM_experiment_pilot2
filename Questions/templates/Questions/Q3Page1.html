@@ -1,0 +1,82 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree %}
+
+{% block title %}
+    QUESTIONS
+
+<h5>
+    Question 3
+</h5>
+{% endblock %}
+
+{% block content %}
+<p>
+    There are 6 players: A,B,C,D,E,F.
+    Assume you know the multipliers and bids of these players, as illustrated in the tables below.
+</p>
+<br>
+<div class = "row">
+    <div class="column">
+        <table align="center">
+            <tr>
+                <th colspan="3"> Group 1</th>
+            </tr>
+            <tr>
+                <td> Player</td>
+                <td> Player's Multiplier</td>
+                <td> Player's Bid </td>
+            </tr>
+                <tr> <td> A</td> <td> 2</td> <td> 10</td> </tr>
+                <tr> <td> B</td> <td> 3</td> <td> 6</td> </tr>
+                <tr> <td> C</td> <td> 6</td> <td> 8</td> </tr>
+        </table>
+    </div>
+    <div class="column">
+        <table align="center">
+            <tr>
+                <th colspan="3"> Group 2</th>
+            </tr>
+            <tr>
+                <td> Player</td>
+                <td> Player's Multiplier</td>
+                <td> Player's Bid </td>
+            </tr>
+                <tr> <td> D</td> <td> 2</td> <td> 1</td> </tr>
+                <tr> <td> E</td> <td> 4</td> <td> 1</td> </tr>
+                <tr> <td> F</td> <td> 10</td> <td> 1</td> </tr>
+        </table>
+    </div>
+</div>
+
+
+{% formfield player.q3 label="Which of the following statements is correct?"%}
+
+
+    {% next_button %}
+
+{% endblock %}
+
+{% block styles %}
+    <style>
+
+        th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 5px;
+            text-align: center;
+        }
+        h6 {text-align:center;}
+        .column {
+            float: left;
+            width: 50%;
+            padding: 5px;
+        }
+        .row::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+    </style>
+{% endblock %}

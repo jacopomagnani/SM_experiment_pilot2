@@ -2,28 +2,88 @@
 {% load staticfiles otree %}
 
 {% block title %}
-    Round {{subsession.round_number}}
+    Practice Round - Results
 {% endblock %}
 
 {% block content %}
 
-    {% if player.match == 1 %}
-    <p>
-        Your formed a partnership.
-        Your partner's type is: {% if player.partner_type == 1 %} X {% elif player.partner_type == 2 %} Y {% elif player.partner_type == 3 %} Z {% endif %}
-        Your points are: {{player.points}}.
-    </p>
-    {% elif player.match == 0 %}
-    <p>
-        You did not form a partnership.
-        Your partner's type was: {% if player.partner_type == 1 %} X {% elif player.partner_type == 2 %} Y {% elif player.partner_type == 3 %} Z {% endif %}
-        Your points are: {{player.points}}.
-    </p>
-    {% endif %}
+<ul>
+    <li>The table below shows you all the bids and multipliers of the players in your market.</li>
+        <li>The first two columns show information about Group 1 and the third and fourth columns show information about Group 2.</li>
+    <li>For each group, a row represents a different player.</li>
+        <li>The second and third columns contain information about players' bids.</li>
+    <li>The first and fourth columns contain information about players' multipliers.</li>
+        <li>In each group, players are ranked by their bids: the top row contains information about the highest bidders in each group,
+    the middle row about the second-highest bidders and the bottom row about the lowest bidders.</li>
+    <li>The highlighted cells contain information about yourself.</li>
+</ul>
 
-    {% next_button %}
+</br>
+</br>
+<table class="tablex">
+    <tr>
+        <th colspan="2"> Group 1</th>
+        <th colspan="2">Group 2</th>
+    </tr>
+    <tr>
+        <td> Player's Multiplier</td>
+        <td> Player's Bid </td>
+        <td> Player's Bid </td>
+        <td> Player's Multiplier</td>
+    </tr>
+    {% for r in ranks_set %}
+    <tr>
+        {% for p in market %}{% if p.side == 0 and p.rank == r%} {% if p.id == 1%}<td style="background-color:#F3ADD3">{{p.type}}</td>{% else %}<td>{{p.type}}</td>{% endif %}{% endif %}{% endfor %}
+        {% for p in market %}{% if p.side == 0 and p.rank == r%} {% if p.id == 1%}<td style="background-color:#F3ADD3">{{p.bid|floatformat}}</td>{% else %}<td>{{p.bid|floatformat}}</td>{% endif %}{% endif %}{% endfor %}
+        {% for p in market %}{% if p.side == 1 and p.rank == r%} {% if p.id == 1%}<td style="background-color:#F3ADD3">{{p.bid|floatformat}}</td>{% else %}<td>{{p.bid|floatformat}}</td>{% endif %}{% endif %}{% endfor %}
+        {% for p in market %}{% if p.side == 1 and p.rank == r%} {% if p.id == 1%}<td style="background-color:#F3ADD3">{{p.type}}</td>{% else %}<td>{{p.type}}</td>{% endif %}{% endif %}{% endfor %}
+    </tr>
+    {% endfor %}
+</table>
+</br>
+</br>
+<p>
+    Your points are: (your multiplier)<span>&times;</span>(your partner's multiplier)<span>&minus;</span>(your bid)<span>&equals;</span>
+    {{player.type}}<span>&times;</span>{{player.partner_type}}<span>&minus;</span>{{player.bid|floatformat}}<span>&equals;</span>
+    {{match_payoff|floatformat}}<span>&minus;</span>{{player.bid|floatformat}}<span>&equals;</span>
+    {{player.points}}
+</p>
+</br>
+</br>
+{% next_button %}
 
 {% endblock %}
 
+{% block styles %}
+    <style>
+        .otree-timer {
+            display: none;
+        }
+        table.tablex {
+        margin-left:auto;
+        margin-right:auto;
+        }
+        table.tablex, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 5px;
+            text-align: center;
+        }
+    </style>
+{% endblock %}
+
+{% block scripts %}
+    <script>
+        $(function () {
+            $('.otree-timer__time-left').on('update.countdown', function (event) {
+                if (event.offset.totalSeconds === 5) {
+                    $('.otree-timer').show();
+                }
+            });
+        });
+    </script>
+{% endblock %}
 
 

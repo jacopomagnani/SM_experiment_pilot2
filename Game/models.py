@@ -16,10 +16,10 @@ Pilot Design for SM
 class Constants(BaseConstants):
     name_in_url = 'game'
     players_per_group = 6
-    num_rounds = 4
-    poll_round = 3
-    part1_end = 2
-    part2_end = 4
+    num_rounds = 50
+    poll_round = 46
+    part1_end = 45
+    part2_end = 50
     type_space = [2, 10]
 
 

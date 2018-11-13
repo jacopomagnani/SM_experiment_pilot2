@@ -20,6 +20,7 @@
         <tr>
             <th>Part</th>
             <th>Round</th>
+            <th>Your Group</th>
             <th>Your Multiplier</th>
             <th>Your Bid</th>
             <th>Your Partner's Multiplier</th>
@@ -29,6 +30,7 @@
             <tr>
                 <td>{{ p.subsession.part }}</td>
                 <td>{{ p.subsession.round_number_in_part }}</td>
+                <td>{{p.side}}</td>
                 <td>{{p.type}}</td>
                 <td>{{p.bid|floatformat}}</td>
                 <td>{{p.partner_type}}</td>

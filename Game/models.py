@@ -21,6 +21,7 @@ class Constants(BaseConstants):
     part1_end = 45
     part2_end = 50
     type_space = [2, 10]
+    side_space = [1, 1, 1, 2, 2, 2]
 
 
 class Subsession(BaseSubsession):
@@ -45,7 +46,7 @@ class Group(BaseGroup):
     num_no = models.IntegerField()
 
     def initialize_group(self):
-        side_list = list([0, 0, 0, 1, 1, 1])
+        side_list = list(Constants.side_space)
         # assign type and side
         for p in self.get_players():
             p.type = random.uniform(Constants.type_space[0], Constants.type_space[1])
@@ -54,18 +55,18 @@ class Group(BaseGroup):
 
     def get_outcome(self):
         # assign rankings
-        side0_bids = [p.bid for p in self.get_players() if p.side == 0]
         side1_bids = [p.bid for p in self.get_players() if p.side == 1]
-        side0_bids.sort()
+        side2_bids = [p.bid for p in self.get_players() if p.side == 2]
         side1_bids.sort()
-        for b in set(side0_bids):
-            rank_set = [i for i, x in enumerate(side0_bids) if x == b]
-            for p in [q for q in self.get_players() if q.side == 0]:
-                if p.bid == b:
-                    p.rank = rank_set.pop(random.randrange(0, len(rank_set)))
+        side2_bids.sort()
         for b in set(side1_bids):
             rank_set = [i for i, x in enumerate(side1_bids) if x == b]
             for p in [q for q in self.get_players() if q.side == 1]:
+                if p.bid == b:
+                    p.rank = rank_set.pop(random.randrange(0, len(rank_set)))
+        for b in set(side2_bids):
+            rank_set = [i for i, x in enumerate(side2_bids) if x == b]
+            for p in [q for q in self.get_players() if q.side == 2]:
                 if p.bid == b:
                     p.rank = rank_set.pop(random.randrange(0, len(rank_set)))
         # form matches

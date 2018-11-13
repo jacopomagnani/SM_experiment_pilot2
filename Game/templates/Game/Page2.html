@@ -20,10 +20,10 @@
     </tr>
     {% for r in ranks_set %}
     <tr>
-        {% for p in group.get_players %}{% if p.side == 0 and p.rank == r%} {% if p == player%}<td style="background-color:#F3ADD3">{{p.type}}</td>{% else %}<td>{{p.type}}</td>{% endif %}{% endif %}{% endfor %}
-        {% for p in group.get_players %}{% if p.side == 0 and p.rank == r%} {% if p == player%}<td style="background-color:#F3ADD3">{{p.bid|floatformat}}</td>{% else %}<td>{{p.bid|floatformat}}</td>{% endif %}{% endif %}{% endfor %}
-        {% for p in group.get_players %}{% if p.side == 1 and p.rank == r%} {% if p == player%}<td style="background-color:#F3ADD3">{{p.bid|floatformat}}</td>{% else %}<td>{{p.bid|floatformat}}</td>{% endif %}{% endif %}{% endfor %}
         {% for p in group.get_players %}{% if p.side == 1 and p.rank == r%} {% if p == player%}<td style="background-color:#F3ADD3">{{p.type}}</td>{% else %}<td>{{p.type}}</td>{% endif %}{% endif %}{% endfor %}
+        {% for p in group.get_players %}{% if p.side == 1 and p.rank == r%} {% if p == player%}<td style="background-color:#F3ADD3">{{p.bid|floatformat}}</td>{% else %}<td>{{p.bid|floatformat}}</td>{% endif %}{% endif %}{% endfor %}
+        {% for p in group.get_players %}{% if p.side == 2 and p.rank == r%} {% if p == player%}<td style="background-color:#F3ADD3">{{p.bid|floatformat}}</td>{% else %}<td>{{p.bid|floatformat}}</td>{% endif %}{% endif %}{% endfor %}
+        {% for p in group.get_players %}{% if p.side == 2 and p.rank == r%} {% if p == player%}<td style="background-color:#F3ADD3">{{p.type}}</td>{% else %}<td>{{p.type}}</td>{% endif %}{% endif %}{% endfor %}
     </tr>
     {% endfor %}
 </table>

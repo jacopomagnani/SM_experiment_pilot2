@@ -9,7 +9,9 @@
 
 
     <h4 align="center"> Make a choice </h4>
-
+    <p>
+        Your group is: Group {{player.side}}.
+    </p>
     <p>
         Your multiplier is: {{player.type}}.
     </p>
@@ -25,6 +27,7 @@
         <tr>
             <th>Part</th>
             <th>Round</th>
+            <th>Your Group</th>
             <th>Your Multiplier</th>
             <th>Your Bid</th>
             <th>Your Partner's Multiplier</th>
@@ -34,6 +37,7 @@
             <tr>
                 <td>Practice</td>
                 <td>{{ p.subsession.round_number }}</td>
+                <td>{{p.side}}</td>
                 <td>{{p.type}}</td>
                 <td>{% if p.round_number == player.round_number %} - {% else %} {{p.bid|floatformat}} {% endif %}</td>
                 <td>{% if p.round_number == player.round_number %} - {% else %} {{p.partner_type}} {% endif %}</td>

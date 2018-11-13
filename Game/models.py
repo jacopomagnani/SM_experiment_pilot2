@@ -21,7 +21,7 @@ class Constants(BaseConstants):
     part1_end = 45
     part2_end = 50
     type_space = [2, 10]
-    side_space = [1, 1, 1, 2, 2, 2]
+    side_space = [1, 1, 1, 2, 2]
 
 
 class Subsession(BaseSubsession):

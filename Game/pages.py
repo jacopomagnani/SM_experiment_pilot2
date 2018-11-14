@@ -73,7 +73,7 @@ class Page2(Page):
 
     def vars_for_template(self):
         return {
-            'ranks_set': [2, 1, 0],
+            'ranks_set': [0, 1, 2],
             'match_payoff': self.player.type * self.player.partner_type
         }
 

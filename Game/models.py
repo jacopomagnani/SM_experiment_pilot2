@@ -57,8 +57,8 @@ class Group(BaseGroup):
         # assign rankings
         side1_bids = [p.bid for p in self.get_players() if p.side == 1]
         side2_bids = [p.bid for p in self.get_players() if p.side == 2]
-        side1_bids.sort()
-        side2_bids.sort()
+        side1_bids.sort(reverse=True)
+        side2_bids.sort(reverse=True)
         for b in set(side1_bids):
             rank_set = [i for i, x in enumerate(side1_bids) if x == b]
             for p in [q for q in self.get_players() if q.side == 1]:

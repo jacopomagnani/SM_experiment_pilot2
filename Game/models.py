@@ -21,7 +21,8 @@ class Constants(BaseConstants):
     part1_end = 45
     part2_end = 50
     type_space = [2, 10]
-    side_space = [1, 1, 1, 2, 2]
+    asymmetric_side_space = [1, 1, 1, 2, 2]
+    symmetric_side_space = [1, 1, 1, 2, 2, 2]
 
 
 class Subsession(BaseSubsession):
@@ -38,15 +39,27 @@ class Subsession(BaseSubsession):
                 else:
                     self.in_round(t).part = 2
                     self.in_round(t).round_number_in_part = self.in_round(t).round_number - Constants.part1_end
+            # form groups
+            group_matrix = []
+            players = self.get_players()
+            ppg = Constants.players_per_group
+            for i in range(0, len(players), ppg):
+                group_matrix.append(players[i:i + ppg])
+            self.set_group_matrix(group_matrix)
 
 
 class Group(BaseGroup):
 
+    group_type = models.IntegerField()
     num_yes = models.IntegerField()
     num_no = models.IntegerField()
 
     def initialize_group(self):
-        side_list = list(Constants.side_space)
+        self.group_type = len(self.get_players())
+        if self.group_type == 5:
+            side_list = list(Constants.asymmetric_side_space)
+        elif self.group_type == 6:
+            side_list = list(Constants.symmetric_side_space)
         # assign type and side
         for p in self.get_players():
             p.type = random.uniform(Constants.type_space[0], Constants.type_space[1])

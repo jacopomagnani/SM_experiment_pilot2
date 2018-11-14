@@ -23,6 +23,7 @@
             <th>Your Group</th>
             <th>Your Multiplier</th>
             <th>Your Bid</th>
+            {% if group.group_type == 5 %}<th>Formed a Pair?</th>{% endif %}
             <th>Your Partner's Multiplier</th>
             <th>Your points</th>
         </tr>
@@ -33,7 +34,8 @@
                 <td>{{p.side}}</td>
                 <td>{{p.type}}</td>
                 <td>{{p.bid|floatformat}}</td>
-                <td>{{p.partner_type}}</td>
+                {% if group.group_type == 5 %}<td>{% if p.partner_type>0 %} Yes {% else %} No {% endif %}</td>{% endif %}
+                <td>{% if p.partner_type>0 %} {{p.partner_type}} {% else %} - {% endif %}</td>
                 <td>{{p.points}}</td>
             </tr>
         {% endfor %}

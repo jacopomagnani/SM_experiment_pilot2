@@ -30,6 +30,7 @@
             <th>Your Group</th>
             <th>Your Multiplier</th>
             <th>Your Bid</th>
+            {% if group.group_type == 5 %}<th>Formed a Pair?</th>{% endif %}
             <th>Your Partner's Multiplier</th>
             <th>Your points</th>
         </tr>
@@ -40,7 +41,10 @@
                 <td>{{p.side}}</td>
                 <td>{{p.type}}</td>
                 <td>{% if p.round_number == player.round_number %} - {% else %} {{p.bid|floatformat}} {% endif %}</td>
-                <td>{% if p.round_number == player.round_number %} - {% else %} {{p.partner_type}} {% endif %}</td>
+                {% if group.group_type == 5 %}
+                    <td>{% if p.round_number == player.round_number %} - {% else %} {% if p.partner_type>0 %} Yes {% else %} No {% endif %} {% endif %}</td>
+                {% endif %}
+                <td>{% if p.round_number == player.round_number %} - {% else %} {% if p.partner_type>0 %} {{p.partner_type}} {% else %} - {% endif %} {% endif %}</td>
                 <td>{% if p.round_number == player.round_number %} - {% else %} {{p.points}} {% endif %}</td>
             </tr>
         {% endfor %}

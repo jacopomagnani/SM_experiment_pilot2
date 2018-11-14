@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f7ed58e6-a89b-4cc1-9855-f30c4f76d6e6" name="Default" comment="" />
+    <list default="true" id="f7ed58e6-a89b-4cc1-9855-f30c4f76d6e6" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/Game/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Game/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Game/templates/Game/Page1.html" beforeDir="false" afterPath="$PROJECT_DIR$/Game/templates/Game/Page1.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Game/templates/Game/Page2.html" beforeDir="false" afterPath="$PROJECT_DIR$/Game/templates/Game/Page2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Game/templates/Game/PartEnd.html" beforeDir="false" afterPath="$PROJECT_DIR$/Game/templates/Game/PartEnd.html" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,44 +56,56 @@
       <usages-collector id="statistics.lifecycle.project">
         <counts>
           <entry key="project.closed" value="1" />
-          <entry key="project.open.time.0" value="1" />
-          <entry key="project.opened" value="1" />
+          <entry key="project.open.time.0" value="2" />
+          <entry key="project.opened" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="html" value="2" />
+          <entry key="html" value="4" />
           <entry key="py" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="HTML" value="2" />
+          <entry key="HTML" value="4" />
           <entry key="Python" value="2" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="html" value="296" />
+          <entry key="py" value="126" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="HTML" value="296" />
+          <entry key="Python" value="126" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Game/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-282">
-              <caret line="28" column="32" lean-forward="true" selection-start-line="28" selection-start-column="32" selection-end-line="28" selection-end-column="32" />
+            <state relative-caret-position="459">
+              <caret line="61" column="59" selection-start-line="61" selection-start-column="59" selection-end-line="61" selection-end-column="59" />
               <folding>
                 <element signature="e#0#134#0" expanded="true" />
-                <marker date="1542114817411" expanded="true" signature="1506:1515" ph="..." />
+                <marker date="1542175373585" expanded="true" signature="2093:2102" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Game/pages.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="81">
-              <caret line="34" lean-forward="true" selection-start-line="34" selection-end-line="34" />
+            <state relative-caret-position="615">
+              <caret line="44" column="28" lean-forward="true" selection-start-line="44" selection-start-column="28" selection-end-line="44" selection-end-column="28" />
             </state>
           </provider>
         </entry>
@@ -96,17 +113,26 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Game/templates/Game/Page2.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="25" column="57" selection-start-line="25" selection-start-column="57" selection-end-line="25" selection-end-column="57" />
+            <state relative-caret-position="501">
+              <caret line="36" column="5" selection-start-line="36" selection-start-column="5" selection-end-line="36" selection-end-column="5" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Game/templates/Game/Poll1.html">
+        <entry file="file://$PROJECT_DIR$/Game/templates/Game/Page1.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="525">
-              <caret line="35" column="14" lean-forward="true" selection-start-line="35" selection-start-column="14" selection-end-line="35" selection-end-column="14" />
+            <state relative-caret-position="479">
+              <caret line="32" column="76" lean-forward="true" selection-start-line="32" selection-end-line="33" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Game/templates/Game/PartEnd.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="540">
+              <caret line="36" column="121" selection-start-line="36" selection-start-column="121" selection-end-line="36" selection-end-column="121" />
             </state>
           </provider>
         </entry>
@@ -167,22 +193,22 @@
         <option value="$PROJECT_DIR$/Game/templates/Game/Part2Intro.html" />
         <option value="$PROJECT_DIR$/instructions/templates/instructions/Page3.html" />
         <option value="$PROJECT_DIR$/Game/templates/Game/Poll2.html" />
-        <option value="$PROJECT_DIR$/Game/pages.py" />
-        <option value="$PROJECT_DIR$/Game/templates/Game/Page2.html" />
-        <option value="$PROJECT_DIR$/Game/templates/Game/Page1.html" />
-        <option value="$PROJECT_DIR$/Game/templates/Game/PartEnd.html" />
         <option value="$PROJECT_DIR$/Practice/templates/Practice/Page2.html" />
         <option value="$PROJECT_DIR$/Practice/templates/Practice/PartEnd.html" />
         <option value="$PROJECT_DIR$/Practice/models.py" />
         <option value="$PROJECT_DIR$/Practice/templates/Practice/Page1.html" />
-        <option value="$PROJECT_DIR$/Game/models.py" />
         <option value="$PROJECT_DIR$/Game/templates/Game/Poll1.html" />
+        <option value="$PROJECT_DIR$/Game/pages.py" />
+        <option value="$PROJECT_DIR$/Game/models.py" />
+        <option value="$PROJECT_DIR$/Game/templates/Game/Page1.html" />
+        <option value="$PROJECT_DIR$/Game/templates/Game/Page2.html" />
+        <option value="$PROJECT_DIR$/Game/templates/Game/PartEnd.html" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="95" />
-    <option name="y" value="175" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="56" />
+    <option name="y" value="23" />
     <option name="width" value="1920" />
     <option name="height" value="967" />
   </component>
@@ -204,20 +230,7 @@
             <path>
               <item name="SM_experiment_pilot2" type="b2602c69:ProjectViewProjectNode" />
               <item name="SM_experiment_pilot2" type="462c0819:PsiDirectoryNode" />
-              <item name="Game" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SM_experiment_pilot2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SM_experiment_pilot2" type="462c0819:PsiDirectoryNode" />
-              <item name="Game" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SM_experiment_pilot2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SM_experiment_pilot2" type="462c0819:PsiDirectoryNode" />
-              <item name="Game" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="Game" type="462c0819:PsiDirectoryNode" />
+              <item name="instructions" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -265,7 +278,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="95" y="175" width="1920" height="967" extended-state="0" />
+    <frame x="56" y="23" width="1920" height="967" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24223275" />
@@ -512,13 +525,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Game/templates/Game/PartEnd.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="32" column="30" selection-start-line="32" selection-start-column="30" selection-end-line="32" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/instructions/templates/instructions/Page3.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
@@ -528,13 +534,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/requirements.txt">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Game/templates/Game/Page1.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="585">
-          <caret line="39" column="23" selection-start-line="39" selection-start-column="23" selection-end-line="39" selection-end-column="23" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Practice/templates/Practice/Page2.html">
       <provider selected="true" editor-type-id="text-editor">
@@ -581,28 +580,42 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Game/templates/Game/Page2.html">
+    <entry file="file://$PROJECT_DIR$/Game/templates/Game/PartEnd.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="25" column="57" selection-start-line="25" selection-start-column="57" selection-end-line="25" selection-end-column="57" />
+        <state relative-caret-position="540">
+          <caret line="36" column="121" selection-start-line="36" selection-start-column="121" selection-end-line="36" selection-end-column="121" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Game/models.py">
+    <entry file="file://$PROJECT_DIR$/Game/templates/Game/Page1.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-282">
-          <caret line="28" column="32" lean-forward="true" selection-start-line="28" selection-start-column="32" selection-end-line="28" selection-end-column="32" />
-          <folding>
-            <element signature="e#0#134#0" expanded="true" />
-            <marker date="1542114817411" expanded="true" signature="1506:1515" ph="..." />
-          </folding>
+        <state relative-caret-position="479">
+          <caret line="32" column="76" lean-forward="true" selection-start-line="32" selection-end-line="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Game/templates/Game/Page2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="501">
+          <caret line="36" column="5" selection-start-line="36" selection-start-column="5" selection-end-line="36" selection-end-column="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Game/pages.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="81">
-          <caret line="34" lean-forward="true" selection-start-line="34" selection-end-line="34" />
+        <state relative-caret-position="615">
+          <caret line="44" column="28" lean-forward="true" selection-start-line="44" selection-start-column="28" selection-end-line="44" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Game/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="61" column="59" selection-start-line="61" selection-start-column="59" selection-end-line="61" selection-end-column="59" />
+          <folding>
+            <element signature="e#0#134#0" expanded="true" />
+            <marker date="1542175373585" expanded="true" signature="2093:2102" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>

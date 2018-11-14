@@ -29,11 +29,11 @@
 </table>
 </br>
 </br>
+{% if player.partner_type == 0 %}
+    <p>You did not form a pair.</p>
+{% endif %}
 <h6>
-    Your points = (your multiplier)<span>&times;</span>(your partner's multiplier)<span>&minus;</span>(your bid)<span>&equals;</span>
-    {{player.type}}<span>&times;</span>{{player.partner_type}}<span>&minus;</span>{{player.bid|floatformat}}<span>&equals;</span>
-    {{match_payoff|floatformat}}<span>&minus;</span>{{player.bid|floatformat}}<span>&equals;</span>
-    {{player.points}}
+    Your points = {{match_payoff|floatformat}}<span>&minus;</span>{{player.bid|floatformat}}<span>&equals;</span>{{player.points}}
 </h6>
 </br>
 </br>

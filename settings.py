@@ -10,7 +10,7 @@ import otree.settings
 # e.g. self.session.config['participation_fee']
 
 SESSION_CONFIG_DEFAULTS = {
-    'real_world_currency_per_point': 1.15,
+    'real_world_currency_per_point': 2.9,
     'participation_fee': 30,
     'doc': "",
 }
@@ -21,8 +21,7 @@ SESSION_CONFIGS = [
         'display_name': "My Configs",
         'num_demo_participants': 5,
         #'app_sequence': ['instructions', 'Practice', 'Questions', 'Game', 'finalpage'],
-        'app_sequence': [ 'Game', 'finalpage'],
-        'players_per_group': 5
+        'app_sequence': [ 'Practice', 'Game', 'finalpage']
     }
     ]
 # see the end of this file for the inactive session configs

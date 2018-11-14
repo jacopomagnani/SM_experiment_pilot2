@@ -2,7 +2,7 @@
 {% load staticfiles otree %}
 
 {% block title %}
-    Practice Round
+    Practice Round ({{subsession.round_number}} of {{Constants.num_rounds}})
 {% endblock %}
 
 {% block content %}
@@ -10,7 +10,7 @@
 
     <h4 align="center"> Make a choice </h4>
     <p>
-        Your group is: Group {{player.side}}.
+        Your group is Group {{player.side}}.
     </p>
     <p>
         Your multiplier is: {{player.type}}.
@@ -30,6 +30,7 @@
             <th>Your Group</th>
             <th>Your Multiplier</th>
             <th>Your Bid</th>
+            <th>Formed a Pair?</th>
             <th>Your Partner's Multiplier</th>
             <th>Your points</th>
         </tr>
@@ -40,7 +41,8 @@
                 <td>{{p.side}}</td>
                 <td>{{p.type}}</td>
                 <td>{% if p.round_number == player.round_number %} - {% else %} {{p.bid|floatformat}} {% endif %}</td>
-                <td>{% if p.round_number == player.round_number %} - {% else %} {{p.partner_type}} {% endif %}</td>
+                <td>{% if p.round_number == player.round_number %} - {% else %} {% if p.partner_type > 0 %} Yes {% else %} No {% endif %} {% endif %}</td>
+                <td>{% if p.round_number == player.round_number %} - {% else %} {% if p.partner_type > 0 %} {{p.partner_type}} {% else %} - {% endif %} {% endif %}</td>
                 <td>{% if p.round_number == player.round_number %} - {% else %} {{p.points}} {% endif %}</td>
             </tr>
         {% endfor %}

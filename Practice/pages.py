@@ -5,16 +5,14 @@ import random
 
 
 class Part1Intro(Page):
-
     def is_displayed(self):
         return self.round_number == 1
 
-    def before_next_page(self):
-        self.player.initialize_player()
-
 
 class MyWaitPage1(WaitPage):
-    pass
+    def after_all_players_arrive(self):
+        for p in self.group.get_players():
+            p.initialize_player()
 
 
 class Page1(Page):
@@ -37,14 +35,15 @@ class Page2(Page):
 
     def vars_for_template(self):
         return {
-            'ranks_set': [2, 1, 0],
+            'ranks_set': [0, 1, 2],
             'match_payoff': self.player.type * self.player.partner_type,
             'market': self.participant.vars['practice_data']
         }
 
 
 class PartEnd(Page):
-    pass
+    def is_displayed(self):
+        return self.round_number == Constants.num_rounds
 
 
 page_sequence = [

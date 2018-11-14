@@ -34,8 +34,8 @@
                 <td>{{p.side}}</td>
                 <td>{{p.type}}</td>
                 <td>{{p.bid|floatformat}}</td>
-                <td>{% if p.partner_type>0 %} Yes {% else %} No {% endif %}</td>
-                <td>{% if p.partner_type>0 %} {{p.partner_type}} {% else %} - {% endif %}</td>
+                <td>{% if p.partner_type > 0 %} Yes {% else %} No {% endif %}</td>
+                <td>{% if p.partner_type > 0 %} {{p.partner_type}} {% else %} - {% endif %}</td>
                 <td>{{p.points}}</td>
             </tr>
         {% endfor %}

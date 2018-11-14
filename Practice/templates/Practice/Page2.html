@@ -2,7 +2,7 @@
 {% load staticfiles otree %}
 
 {% block title %}
-    Practice Round - Results
+    Practice Round {{subsession.round_number}} - Results
 {% endblock %}
 
 {% block content %}
@@ -42,12 +42,23 @@
 </table>
 </br>
 </br>
-<p>
-    Your points are: (your multiplier)<span>&times;</span>(your partner's multiplier)<span>&minus;</span>(your bid)<span>&equals;</span>
-    {{player.type}}<span>&times;</span>{{player.partner_type}}<span>&minus;</span>{{player.bid|floatformat}}<span>&equals;</span>
-    {{match_payoff|floatformat}}<span>&minus;</span>{{player.bid|floatformat}}<span>&equals;</span>
-    {{player.points}}
-</p>
+{% if player.partner_type == 0 %}
+    <p>You did not form a pair.</p>
+    <p>
+        Your points are: 0<span>&minus;</span>(your bid)<span>&equals;</span>
+        0<span>&minus;</span>{{player.bid|floatformat}}<span>&equals;</span>
+        {{player.points}}
+    </p>
+{% else %}
+    <p>You formed a pair.</p>
+    <p>
+        Your points are: (your multiplier)<span>&times;</span>(your partner's multiplier)<span>&minus;</span>(your bid)<span>&equals;</span>
+        {{player.type}}<span>&times;</span>{{player.partner_type}}<span>&minus;</span>{{player.bid|floatformat}}<span>&equals;</span>
+        {{match_payoff|floatformat}}<span>&minus;</span>{{player.bid|floatformat}}<span>&equals;</span>
+        {{player.points}}
+    </p>
+{% endif %}
+
 </br>
 </br>
 {% next_button %}
@@ -71,6 +82,7 @@
             padding: 5px;
             text-align: center;
         }
+        h6 {text-align:center;}
     </style>
 {% endblock %}
 

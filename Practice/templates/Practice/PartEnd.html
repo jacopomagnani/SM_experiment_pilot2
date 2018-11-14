@@ -2,13 +2,13 @@
 {% load staticfiles otree %}
 
 {% block title %}
-    The Practice Round Is Over
+    The Practice Rounds Are Over
 {% endblock %}
 
 {% block content %}
 
     <p>
-        The practice round is over.
+        The practice rounds are over.
     </p>
 
     <br />
@@ -23,6 +23,7 @@
             <th>Your Group</th>
             <th>Your Multiplier</th>
             <th>Your Bid</th>
+            <th>Formed a Pair?</th>
             <th>Your Partner's Multiplier</th>
             <th>Your points</th>
         </tr>
@@ -33,7 +34,8 @@
                 <td>{{p.side}}</td>
                 <td>{{p.type}}</td>
                 <td>{{p.bid|floatformat}}</td>
-                <td>{{p.partner_type}}</td>
+                <td>{% if p.partner_type > 0 %} Yes {% else %} No {% endif %}</td>
+                <td>{% if p.partner_type > 0 %} {{p.partner_type}} {% else %} - {% endif %}</td>
                 <td>{{p.points}}</td>
             </tr>
         {% endfor %}

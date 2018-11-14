@@ -21,7 +21,7 @@ SESSION_CONFIGS = [
         'display_name': "My Configs",
         'num_demo_participants': 5,
         #'app_sequence': ['instructions', 'Practice', 'Questions', 'Game', 'finalpage']
-        'app_sequence': ['Questions', 'Game', 'finalpage']
+        'app_sequence': ['Practice', 'Game', 'finalpage']
     }
     ]
 # see the end of this file for the inactive session configs

@@ -59,12 +59,12 @@ class Group(BaseGroup):
         side1_bids.sort(reverse=True)
         side2_bids.sort(reverse=True)
         for b in set(side1_bids):
-            rank_set = [i for i, x in enumerate(side1_bids) if x == b]
+            rank_set = [i for i, x in enumerate(side1_bids, 1) if x == b]
             for p in [q for q in self.get_players() if q.side == 1]:
                 if p.bid == b:
                     p.rank = rank_set.pop(random.randrange(0, len(rank_set)))
         for b in set(side2_bids):
-            rank_set = [i for i, x in enumerate(side2_bids) if x == b]
+            rank_set = [i for i, x in enumerate(side2_bids, 1) if x == b]
             for p in [q for q in self.get_players() if q.side == 2]:
                 if p.bid == b:
                     p.rank = rank_set.pop(random.randrange(0, len(rank_set)))

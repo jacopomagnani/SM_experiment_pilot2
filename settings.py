@@ -19,14 +19,10 @@ SESSION_CONFIGS = [
     {
         'name': 'configs',
         'display_name': "My Configs",
-        'num_demo_participants': 6,
-        'app_sequence': ['instructions', 'Practice', 'Questions', 'Game', 'finalpage'],
-        'players_per_group': 6,
-        'doc': """
-            Note: 'players_per_group' must be an even number;
-            when the number of participants is not divisible by the number of players per group, 
-            then players_per_group will be the number of players in the largest group(s)
-            """
+        'num_demo_participants': 5,
+        #'app_sequence': ['instructions', 'Practice', 'Questions', 'Game', 'finalpage'],
+        'app_sequence': [ 'Game', 'finalpage'],
+        'players_per_group': 5
     }
     ]
 # see the end of this file for the inactive session configs

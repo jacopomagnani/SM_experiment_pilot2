@@ -15,7 +15,7 @@ Pilot Design for SM Asymmetric case
 
 class Constants(BaseConstants):
     name_in_url = 'game'
-    players_per_group = 6
+    players_per_group = 5
     num_rounds = 50
     poll_round = 46
     part1_end = 45

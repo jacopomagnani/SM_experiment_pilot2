@@ -77,10 +77,7 @@ class Group(BaseGroup):
                     p.partner_type = q.type
                     p.points = p.type * q.type - p.bid
             p.points = round(p.points, 1)
-            if p.round_number <= Constants.part1_end:
-                p.payoff = p.points / Constants.part1_end
-            else:
-                p.payoff = p.points / (1+Constants.part2_end-Constants.poll_round)
+            p.payoffs = p.points / Constants.num_rounds
 
     def get_poll_results(self):
         self.num_yes = sum([p.message for p in self.get_players()])

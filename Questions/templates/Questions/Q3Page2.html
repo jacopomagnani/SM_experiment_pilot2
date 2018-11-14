@@ -11,7 +11,7 @@
 
 {% block content %}
 <p>
-    The correct answer is: 'Player B may earn any of the following amounts of points: 0, 6 or 24.'.
+    The correct answer is: 'Player B will earn either 12 points or 4 points.'
 </p>
 <br>
 <h6> Explanation</h6>
@@ -28,8 +28,8 @@
                 <td> Player's Bid </td>
             </tr>
                 <tr> <td> A</td> <td> 2</td> <td> 10</td> </tr>
-                <tr> <td> B</td> <td> 3</td> <td> 6</td> </tr>
-                <tr> <td> C</td> <td> 6</td> <td> 8</td> </tr>
+                <tr> <td> B</td> <td> 4</td> <td> 8</td> </tr>
+                <tr> <td> C</td> <td> 6</td> <td> 6</td> </tr>
         </table>
     </div>
     <div class="column">
@@ -42,42 +42,37 @@
                 <td> Player's Multiplier</td>
                 <td> Player's Bid </td>
             </tr>
-                <tr> <td> D</td> <td> 2</td> <td> 1</td> </tr>
-                <tr> <td> E</td> <td> 4</td> <td> 1</td> </tr>
-                <tr> <td> F</td> <td> 10</td> <td> 1</td> </tr>
+                <tr> <td> D</td> <td> 3</td> <td> 0</td> </tr>
+                <tr> <td> E</td> <td> 5</td> <td> 0</td> </tr>
         </table>
     </div>
 </div>
 
 <br>
 <p>
-    Player B bid 6 and the other players in his group bid 10 and 8.
-    Thus, player B is the lowest bidder in his group.
+    Player B bid 8 and the other players in his group bid 10 and 6.
+    Thus, player B is the second-highest bidder in his group.
 </p>
 <p>
-    In Group 2, all the three players bid the same value.
+    In Group 2, both players bid the same value.
     Therefore, the computer will randomly determine the ranking of their bids.
 </p>
 <p>
-    If the computer determines D is the lowest bidder in his group, then player B will be paired with player D and his score will be:
+    If the computer determines D is the second-highest bidder in his group, then player B will be paired with player D and his score will be:
 </p>
 <p class="c">
-    (B's multiplier)<span>&times;</span>(D's multiplier)<span>&minus;</span>(B's bid) = 3<span>&times;</span>2<span>&minus;</span>6 = 6-6=0
+    (B's multiplier)<span>&times;</span>(D's multiplier)<span>&minus;</span>(B's bid) = 4<span>&times;</span>3<span>&minus;</span>8 = 12-8=4
 </p>
 <p>
-    If the computer determines E is the lowest bidder in his group, then player B will be paired with player E and his score will be:
+    If the computer determines E is the second-highest bidder in his group, then player B will be paired with player E and his score will be:
 </p>
 <p class="c">
-    (B's multiplier)<span>&times;</span>(E's multiplier)<span>&minus;</span>(B's bid) = 3<span>&times;</span>4<span>&minus;</span>6 = 12-6=6
+    (B's multiplier)<span>&times;</span>(E's multiplier)<span>&minus;</span>(B's bid) = 4<span>&times;</span>5<span>&minus;</span>6 = 20-6=12
 </p>
 <p>
-    If the computer determines F is the lowest bidder in his group, then player B will be paired with player F and his score will be:
-</p>
-<p class="c">
-    (B's multiplier)<span>&times;</span>(F's multiplier)<span>&minus;</span>(B's bid) = 3<span>&times;</span>10<span>&minus;</span>6 = 30-6=24
-</p>
-<p>
-    Thus, player B may earn any of these three scores, depending on the random choice of the computer.
+    Thus, player B may earn either of these two scores, depending on the random choice of the computer.
+    However, player B has no chance to earn -8 points.
+    That would happen only if both A and C bid more than B, in which case B would remain unpaired.
 </p>
 <br>
 <br>

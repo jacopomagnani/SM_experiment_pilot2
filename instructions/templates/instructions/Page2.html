@@ -13,23 +13,23 @@
 
 
 <p>
-    This experiment will consist of <b>two parts</b>.
+    This experiment will consist of <b>two parts</b>, each divided into several rounds.
 </p>
 
 <p>
     At the end of the experiment, you will be paid {{ fee }}, plus earnings based on the points you have earned during the experiment.
-    The computer will calculate your average score in Part 1 and your average score in Part 2 and sum them up.
+    The computer will calculate your average score across all rounds.
     This value will then be converted at an exchange rate of AED{{rate_value}} per point and rounded to the nearest integer.
     To sum up, your final payment is given by the following formula:
     <center>
     <em>
-        {{fee}}  <span>+</span>  AED{{rate_value}} <span>&times;</span> (your average score in Part 1  <span>+</span>  your average score in Part 2)
+        {{fee}}  <span>+</span>  AED{{rate_value}} <span>&times;</span> (your average score)
     </em>
     </center>
 </p>
 <br>
 <p class="a">
-    Note: in the unlikely event that the sum of your average scores in Part 1 and Part 2 is negative, you will earn {{fee}}.
+    Note: in the unlikely event that your average score is negative, you will earn {{fee}}.
 </p>
 <br>
     {% next_button %}

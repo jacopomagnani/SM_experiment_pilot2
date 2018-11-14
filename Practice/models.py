@@ -16,7 +16,7 @@ Pilot Design for SM
 class Constants(BaseConstants):
     name_in_url = 'practice_round'
     players_per_group = 5
-    num_rounds = 2
+    num_rounds = 1
     type_space = [2, 10]
     round1_side_space = [1, 1, 1, 2, 2]
     round2_side_space = [2, 1, 1, 1, 2]

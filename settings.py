@@ -20,8 +20,7 @@ SESSION_CONFIGS = [
         'name': 'configs',
         'display_name': "My Configs",
         'num_demo_participants': 5,
-        #'app_sequence': ['instructions', 'Practice', 'Questions', 'Game', 'finalpage']
-        'app_sequence': [ 'Game', 'finalpage']
+        'app_sequence': ['instructions', 'Practice', 'Questions', 'Game', 'finalpage']
     }
     ]
 # see the end of this file for the inactive session configs
